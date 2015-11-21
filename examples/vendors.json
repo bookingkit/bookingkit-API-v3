@@ -1,0 +1,18 @@
+[
+  {
+    "id":"6e65da2bea23fa4340d5f78ee1fda1ae",
+    "name":"erlebnis-buchen.com",
+    "url":"erlebnis-buchen.com",
+    "service_email":"mail@bookingkit.de",
+    "service_phone":"030 6095 503-0",
+    "image":"https:\/\/app.bookingkit.de\/images\/vendors\/d180c9c1568ff03b45943477bd9656a6\/icon\/logoUeoeoeL1_1ss_.tr.jpg"
+  },
+  {
+    "id":"3858f62230ac3c915f300c664312c63f",
+    "name":"reisen-buchen.com",
+    "url":"http://www.reisen-buchen.com",
+    "service_email":"mail@reisen-buchen.com",
+    "service_phone":"030 1234 1230",
+    "image":"https:\/\/app.bookingkit.de\/images\/vendors\/3858f62230ac3c915f300c664312c63f\/icon\/logo.jpg"
+  }
+]

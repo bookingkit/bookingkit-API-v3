@@ -1,0 +1,119 @@
+[
+   {
+      "ident":"e9aed6f43fc5c58365d753b3b64e133c",
+      "title":"Alstert\u00f6rn",
+      "description":"gjhotfjhfl\u00f6jhrl\u00f6",
+      "duration":90,
+      "pre_time":0,
+      "max_participants":96,
+      "location":"Hamburg, Deutschland",
+      "location_lng":"9.99368179999999",
+      "location_lat":"53.5510846",
+      "meeting_location":"Hamburg, Deutschland",
+      "meeting_location_lng":"9.99368179999999",
+      "meeting_location_lat":"53.5510846",
+      "vendor_id":"6e65da2bea23fa4340d5f78ee1fda1ae",
+      "bring":"",
+      "vendor_name":"erlebnis-buchen.com",
+      "youtubeVideoId":false,
+      "images":[
+         "https:\/\/app.bookingkit.de\/images\/vendors\/d180c9c1568ff03b45943477bd9656a6\/detail\/images.jpg"
+      ],
+      "highlights":[
+         "kjhtjhhjdjhn",
+         "ii"
+      ],
+      "categories":[
+         {
+            "id":"1",
+            "title":"St\u00e4dte & Kultur"
+         },
+         {
+            "id":"22",
+            "title":"Stadtf\u00fchrungen"
+         },
+         {
+            "id":"23",
+            "title":"Tagesausfl\u00fcge"
+         }
+      ],
+      "prices":[
+         {
+            "id":"14954",
+            "title":"2 Personen",
+            "value":80
+         },
+         {
+            "id":"14955",
+            "title":"3 personen",
+            "value":90
+         },
+         {
+            "id":"14956",
+            "title":"4 Personen",
+            "value":100
+         },
+         {
+            "id":"14957",
+            "title":"5 Personen (2 Boote)",
+            "value":170
+         }
+      ],
+      "tags":[
+
+      ],
+      "first_date":false
+   },
+   {
+      "ident":"095044b15cc78d3d005526626a770330",
+      "title":"Anekdoten, Geschichten & Am\u00fcsantes \u00fcber K\u00f6ln",
+      "description":"Erleben Sie K\u00f6ln \u201epur\u201c und h\u00f6ren Sie, welche Hist\u00f6rchen sich die K\u00f6lner noch heute erz\u00e4hlen, wo urk\u00f6lsche Originale lebendig sind und welche Spezialit\u00e4ten auch dem Besucher munden. Auf unserer am\u00fcsanten Stadtf\u00fchrung erfahren Sie, wie ein gewitzter K\u00f6lner trotz Pressezensur bekannt machte, dass Josef Frings der neue Erzbischof in K\u00f6ln war, und wie es kommt, dass jemand, der keine Noten lesen konnte, zu einem der wichtigsten Komponisten k\u00f6lschen Liedgutes wurde. In der K\u00f6lner Altstadt erz\u00e4hlen wir Ihnen, was es mit \u201eKallendresser\u201c und \u201ePlatzjabbeck\u201c auf sich hat, wie alt der k\u00f6lsche Adel ist, wo T\u00fcnnes und Sch\u00e4l wohn(t)en und vieles mehr.",
+      "duration":90,
+      "pre_time":5,
+      "max_participants":25,
+      "location":"Kardinal-H\u00f6ffner-Platz, K\u00f6ln, Deutschland",
+      "location_lng":"6.956310600000052",
+      "location_lat":"50.9413407",
+      "meeting_location":"Kardinal-H\u00f6ffner-Platz, K\u00f6ln, Deutschland",
+      "meeting_location_lng":"6.956310600000052",
+      "meeting_location_lat":"50.9413407",
+      "vendor_id":"6e65da2bea23fa4340d5f78ee1fda1ae",
+      "bring":"",
+      "vendor_name":"erlebnis-buchen.com",
+      "youtubeVideoId":false,
+      "images":[
+         "https:\/\/app.bookingkit.de\/images\/vendors\/d180c9c1568ff03b45943477bd9656a6\/detail\/rote_baelle3_1_1.jpg"
+      ],
+      "highlights":false,
+      "categories":[
+         {
+            "id":"1",
+            "title":"St\u00e4dte & Kultur"
+         },
+         {
+            "id":"22",
+            "title":"Stadtf\u00fchrungen"
+         },
+         {
+            "id":"29",
+            "title":"Historische Touren"
+         }
+      ],
+      "prices":[
+         {
+            "id":"43562",
+            "title":"Standard",
+            "value":11
+         },
+         {
+            "id":"43563",
+            "title":"Erm\u00e4\u00dfigt",
+            "value":9
+         }
+      ],
+      "tags":[
+
+      ],
+      "first_date":false
+   }
+]

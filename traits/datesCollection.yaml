@@ -1,0 +1,35 @@
+queryParameters:
+  start_date:
+    type: date
+    description: return dates later or equal to this date (Y-m-d H:i:s)
+  end_date:
+    type: date
+    description: return dates earlier or equal to this date (Y-m-d H:i:s)
+  accept-vendors:
+    type: string
+    description: comma separated list of accepted vendor ids
+  exclude-vendors:
+    type: string
+    description: comma separated list of rejected vendor ids
+  accept-events:
+    type: string
+    description: comma separated list of accepted event ids
+  exclude-events:
+    type: string
+    description: comma separated list of rejected event ids
+  category:
+    type: integer
+    description: filter by category id, get a complete list of categories from the categories resource  
+  order:
+    type: string
+    description: |
+      use -/+ in front of the attribute to specify the soriting direction (DESC / ASC)
+      if no modifier is provided default is +
+      multiple values MAY be provided comma separated
+      example:
+        `\<<resourcePathName>>?order=date,-available_slots`
+      will sort results by date ASC, available_slots DESC
+    enum:
+      - date
+      - available_slots
+      - event_id

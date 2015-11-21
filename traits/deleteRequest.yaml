@@ -1,0 +1,11 @@
+responses:
+  204:
+    description: successfull item deletion, the response body is emtpy
+  400:
+    description: your request is malformated se error message for details
+    body:
+      schema: error
+  401:
+    description: you are not authorized to make this request
+    body:
+      schema: error

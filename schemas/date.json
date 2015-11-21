@@ -1,0 +1,35 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Date",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "uniquie identifyer"
+    },
+    "event_id": {
+      "required": true,
+      "type": "string",
+      "description": "uniquie identifyer of parent event"
+    },
+    "date": {
+      "required": true,
+      "type": "string",
+      "format": "date-time",
+      "description": "startig time of the event",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
+    },
+    "available_slots": {
+      "required": true,
+      "description": "number of available seats / persons",
+      "type": "integer"
+    },
+    "total_slots": {
+      "required": true,
+      "description": "total number of seats / persons",
+      "type": "integer"
+    }
+  }
+}

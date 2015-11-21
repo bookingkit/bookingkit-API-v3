@@ -1,0 +1,28 @@
+
+description: |
+  OAuth2 is a protocol that lets external apps request authorization to private
+  details
+type: OAuth 2.0
+describedBy:
+  headers:
+    Authorization:
+      description: |
+        Used to send a valid OAuth 2 access token. Do not use together with
+        the "access_token" query string parameter.
+      type: string
+  queryParameters:
+    access_token:
+      description: |
+        Used to send a valid OAuth 2 access token. Do not use together with
+        the "Authorization" header
+      type: string
+  responses:
+    404:
+      description: Unauthorized
+settings:
+  authorizationUri: TBA/oauth/authorize
+  accessTokenUri: TBA/oauth/access_token
+  authorizationGrants: [ credentials ]
+  scopes:
+    - "owner"
+    - "marketplace"

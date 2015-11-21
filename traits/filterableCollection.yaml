@@ -1,0 +1,18 @@
+displayName: Common Filters for all collections
+queryParameters:
+  limit:
+    type: integer
+    default: 100000
+  offset:
+    type: integer
+    default: 0
+  accept:
+    type: string
+    description: comma separated list of accepted item ids
+  exclude:
+    type: string
+    description: comma separated list of rejected item ids
+  fields:
+    type: string
+    description: comma separated list of item properties that should be returned
+    default: all

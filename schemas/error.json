@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Error",
+  "properties": {
+    "code": {
+      "required": true,
+      "type": "number",
+      "description": "uniquie error code"
+    },
+    "user_message": {
+      "required": true,
+      "type": "string",
+      "description": "firendly error message"
+    },
+    "internal_message": {
+      "required": false,
+      "type": "string",
+      "description": "complete error message"
+    }
+  }
+}

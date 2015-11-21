@@ -1,0 +1,201 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Event",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "uniquie identifyer"
+    },
+    "title": {
+      "required": true,
+      "type": "string",
+      "description": "event title, descriptive",
+      "maxLength": 255
+    },
+    "description": {
+      "required": true,
+      "type": "string",
+      "description": "text describing the event"
+    },
+    "duration": {
+      "required": true,
+      "type": "number",
+      "description": "duration of the event in minutes"
+    },
+    "pre_time": {
+      "description": "how much earlier clients should arrive, in minutes",
+      "required": false,
+      "type": "integer"
+    },
+    "max_participants": {
+      "required": true,
+      "type": "integer",
+      "description": "maximum number of concurrent participants for one event"
+    },
+    "location": {
+      "required": true,
+      "type": "string",
+      "description": "event location address"
+    },
+    "location_lng": {
+      "required": true,
+      "type": "number",
+      "description": "geo coortinate"
+    },
+    "location_lat": {
+      "required": true,
+      "type": "number",
+      "description": "geo coortinate"
+    },
+    "meeting_location": {
+      "required": true,
+      "type": "string",
+      "description": "meeting location address, MAY differ from event location"
+    },
+    "meeting_location_lng": {
+      "required": true,
+      "type": "number",
+      "description": "geo coortinate"
+    },
+    "meeting_location_lat": {
+      "required": true,
+      "type": "number",
+      "description": "geo coortinate"
+    },
+    "vendor_id": {
+      "required": true,
+      "type": "string",
+      "description": "uniquie identifyer of parent vendor"
+    },
+    "bring": {
+      "comment": "describes what clients should birng to the event",
+      "required": false,
+      "type": "string"
+    },
+    "vendor_name": {
+      "required": true,
+      "type": "string",
+      "description": "vendor name, usualy a company name"
+    },
+    "youtubeVideoId": {
+      "required": false,
+      "type": "boolean",
+      "description": "Youtube video id, links / ebmedds MUST be implemendet client side"
+    },
+    "images": {
+      "required": false,
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": [
+        {
+          "type": "string",
+          "description": "image URL"
+        }
+      ]
+    },
+    "highlights": {
+      "required": false,
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 10,
+      "items": [
+        {
+          "type": "string",
+          "description": "list overview of main attractions for the event"
+        }
+      ]
+    },
+    "categories": {
+      "description": "full ordered category tree path",
+      "required": true,
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": false,
+              "type": "integer",
+              "description": "uniquie identifyer"
+            },
+            "title": {
+              "required": false,
+              "type": "string",
+              "description": "category name"
+            }
+          }
+        }
+      ]
+    },
+    "prices": {
+      "required": true,
+      "type": "array",
+      "uniqueItems": true,
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": true,
+              "type": "string",
+              "description": "uniquie identifyer"
+            },
+            "title": {
+              "required": true,
+              "type": "string",
+              "description": "price name, will explain the difference to other prices"
+            },
+            "value": {
+              "required": true,
+              "type": "number",
+              "description": "price value"
+            },
+            "currency": {
+              "required": true,
+              "type": "string",
+              "maxLength": 3,
+              "minLength": 3,
+              "description": "price currency"
+            }
+          }
+        }
+      ]
+    },
+    "tags": {
+      "required": false,
+      "type": "array",
+      "description": "optional tags for the event",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "required": true,
+              "type": "string"
+            },
+            "values": {
+              "required": false,
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "first_date": {
+      "required": true,
+      "type": "string",
+      "format": "date-time",
+      "description": "startig time of the next event",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
+    }
+  }
+}

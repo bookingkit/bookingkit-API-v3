@@ -1,0 +1,18 @@
+queryParameters:
+  match:
+    description: |
+      searches the string within therse proterties:
+      - code
+      - user_name
+      - bookings.code
+  order:
+    type: string
+    description: |
+      use -/+ in front of the attribute to specify the soriting direction (DESC / ASC)
+      if no modifier is provided default is +
+      multiple values MAY be provided comma separated
+      example:
+        `\<<resourcePathName>>?order=vendor,-date`
+      will sort results by vendor ASC, date desc
+    enum:
+      - name

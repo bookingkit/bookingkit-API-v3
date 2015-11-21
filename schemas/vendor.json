@@ -1,0 +1,39 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Vendor",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "uniquie identifyer"
+    },
+    "name": {
+      "required": true,
+      "type": "string",
+      "description": "vendor name, usualy a company name"
+    },
+    "url": {
+      "required": false,
+      "type": "string",
+      "description": "vendor homepage"
+    },
+    "service_email": {
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "description": "contact email for customer service"
+    },
+    "service_phone": {
+      "required": false,
+      "type": "string",
+      "description": "contact phone for customer service"
+    },
+    "image": {
+      "required": false,
+      "type": "string",
+      "description": "URL of vendor logo"
+    }
+  }
+}

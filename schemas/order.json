@@ -1,0 +1,245 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Order",
+  "properties": {
+    "id": {
+      "required": false,
+      "type": "string",
+      "description": "uniquie identifyer"
+    },
+    "code": {
+      "required": false,
+      "type": "string",
+      "description": "uniquie code, communicated to the end user"
+    },
+    "external_reference": {
+      "required": false,
+      "type": "string",
+      "description": "third party systems that generated this order my write their own identifyer here"
+    },
+    "date": {
+      "required": true,
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "date when the order was generated, may not be changed"
+    },
+    "expire_date": {
+      "required": "false",
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "if set the Order will automaticaly cancel at the given time"
+    },
+    "status": {
+      "required": true,
+      "type": "string",
+      "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+      "description": "status of the order"
+    },
+    "lang": {
+      "required": true,
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "description": "language code ISO_639-1"
+    },
+    "currency": {
+      "required": true,
+      "type": "string",
+      "maxLength": 3,
+      "minLength": 3,
+      "description": "price currency"
+    },
+    "email": {
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "description": "billing email"
+    },
+    "name": {
+      "required": true,
+      "type": "string",
+      "minLength": 4,
+      "description": "billing name"
+    },
+    "phone": {
+      "required": false,
+      "type": "string",
+      "description": "billing phone"
+    },
+    "street": {
+      "required": false,
+      "type": "string",
+      "description": "billing street name"
+    },
+    "streetnr": {
+      "required": false,
+      "type": "string",
+      "description": "billing house number"
+    },
+    "zip": {
+      "required": false,
+      "type": "string",
+      "description": "billing zip code"
+    },
+    "city": {
+      "required": false,
+      "type": "string",
+      "description": "billing city"
+    },
+    "comment": {
+      "required": false,
+      "type": "string",
+      "description": "order comments"
+    },
+    "payment_date": {
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "if filled order is marked as payed"
+    },
+    "cancellation_date": {
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "date at which the order was cancelled"
+    },
+    "tickets": {
+      "required": false,
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": true,
+              "type": "string",
+              "description": "uniquie identifyer"
+            },
+            "event_date_id": {
+              "required": true,
+              "type": "string",
+              "description": "uniquie identifyer of the reserved event date"
+            },
+            "code": {
+              "required": true,
+              "type": "string",
+              "description": "unique code for this ticket"
+            },
+            "status": {
+              "required": true,
+              "type": "string",
+              "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+              "description": "status of the ticket"
+            },
+            "comment": {
+              "required": false,
+              "type": "string",
+              "description": "comments for the ticket"
+            },
+            "cancellation_date": {
+              "required": false,
+              "type": "string",
+              "format": "date-time",
+              "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+              "description": "date when the ticket was canceled"
+            },
+            "participants": {
+              "required": true,
+              "type": "array",
+              "minItems": 1,
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "required": true,
+                      "type": "string",
+                      "description": "unique identifyer"
+                    },
+                    "name": {
+                      "required": false,
+                      "type": "string",
+                      "description": "participant name"
+                    },
+                    "email": {
+                      "required": false,
+                      "type": "string",
+                      "format": "email",
+                      "description": "participant email"
+                    },
+                    "phone": {
+                      "required": false,
+                      "type": "string",
+                      "description": "participant phone"
+                    },
+                    "comment": {
+                      "required": false,
+                      "type": "string",
+                      "description": "comments concerning this participant"
+                    },
+                    "price_id": {
+                      "required": true,
+                      "type": "string",
+                      "description": "unique identifyer of the price for this participant"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "voucherOrders": {
+      "required": false,
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": true,
+              "type": "string",
+              "description": "unique identifyer"
+            },
+            "status": {
+                "required": true,
+                "type": "string",
+                "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+                "description": "status of the order"
+            },
+            "voucher": {
+              "required": false,
+              "type": "object",
+              "properties": {
+                "code": {
+                  "required": true,
+                  "type": "string",
+                  "description": "voucher code"
+                },
+                "value": {
+                  "required": true,
+                  "type": "number",
+                  "description": "value of the voucher"
+                },
+                "currency": {
+                  "required": true,
+                  "type": "string",
+                  "maxLength": 3,
+                  "minLength": 3,
+                  "description": "voucher currency"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

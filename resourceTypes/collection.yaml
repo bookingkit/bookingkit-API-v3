@@ -1,0 +1,16 @@
+get:
+  description: |
+    Get a list of <<resourcePathName>> in array form
+    since api console does not yet support schema relations view **<<resourcePathName | !singularize>>** schema for details
+  responses:
+    200:
+      body:
+        schema: <<resourcePathName>>
+    400:
+      description: your request is malformated se error message for details
+      body:
+        schema: error
+    401:
+      description: you are not authorized to make this request
+      body:
+        schema: error

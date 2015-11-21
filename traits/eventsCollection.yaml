@@ -1,0 +1,38 @@
+queryParameters:
+  match:
+    description: |
+      searches the string within therse proterties:
+      - title
+      - description
+  category:
+    type: integer
+    description: filter by category id, get a complete list of categories from the categories resource
+  accept-vendors:
+    type: string
+    description: comma separated list of accepted vendor ids
+  exclude-vendors:
+    type: string
+    description: comma separated list of rejected vendor ids
+  min-price:
+    type: number
+  max-price:
+    type: number
+  order:
+    type: string
+    description: |
+      use -/+ in front of the attribute to specify the soriting direction (DESC / ASC)
+      if no modifier is provided default is +
+      multiple values MAY be provided comma separated
+      example:
+        `\<<resourcePathName>>?order=-duration,title`
+      will sort results by duration DESC, title ASC
+    enum:
+      - title
+      - duration
+      - max_participants
+      - vendor_name
+      - price
+      - category_id
+  available_from:
+    type: date
+    description: return events with at least one date later or equal to this date (Y-m-d H:i:s)

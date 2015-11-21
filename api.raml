@@ -1,0 +1,158 @@
+#%RAML 0.8
+title: bookinkit api
+version: v3
+baseUri: TBA
+mediaType: application/json
+
+#protocols: [HTTPS]
+documentation:
+  - title: About the API
+    content: |
+      ## REST API
+      The bookingkit API is designed as RESTful API, all data is returned in JSON format so it can easily be used in all environments.
+      For more information regarding RESTful APIs please visit [wikipedia.com](http://en.wikipedia.org/wiki/Representational_state_transfer)
+
+      ## Request structure
+      `TODO`
+  - title: Under Construction
+    content: |
+      ## Structure
+      Please be advised that the specification is still under construction missing areas will be completed shortly. Changes to current definitions are not to be expected. Should such changes be necessary we will clearly communicate them to our partners.
+
+      ## API server
+      The API v3 is not live at this point, we are working on deploying it soon. Until such time the URL's of the endpoints are to be announced (TBA).
+
+securitySchemes:
+  - oauth_2_0: !include securitySchemes/oauth_2.yaml
+
+securedBy: [oauth_2_0]
+
+schemas:
+  - vendor: !include schemas/vendor.json
+  - vendors: !include schemas/vendors.json
+  - event: !include schemas/event.json
+  - events: !include schemas/events.json
+  - date: !include schemas/date.json
+  - dates: !include schemas/dates.json
+  - eventDates: !include schemas/eventDates.json
+  - order: !include schemas/order.json
+  - orders: !include schemas/orders.json
+  - error: !include schemas/error.json
+
+resourceTypes:
+  - collection: !include resourceTypes/collection.yaml
+  - item: !include resourceTypes/item.yaml
+
+traits:
+  - eventsCollection: !include traits/eventsCollection.yaml
+  - vendorsCollection: !include traits/vendorsCollection.yaml
+  - datesCollection: !include traits/datesCollection.yaml
+  - eventDatesCollection: !include traits/eventDatesCollection.yaml
+  - ordersCollection: !include traits/ordersCollection.yaml
+  - underConstruction: !include traits/underConstruction.yaml
+  - filerableCollection: !include traits/filterableCollection.yaml
+  - createRequest: !include traits/createRequest.yaml
+  - deleteRequest: !include traits/deleteRequest.yaml
+  - patchRequest: !include traits/patchRequest.yaml
+
+/vendors:
+  displayName: Vendor
+  description: Vendors are companies or persons who offer bookable activities on bookingkit.de
+  type: collection
+  get:
+    is: [filerableCollection, vendorsCollection]
+
+  /{id}:
+    type: item
+
+    /events:
+      type: collection
+      description: Event collection for the given vendor
+      get:
+        is: [filerableCollection, eventsCollection]
+      post:
+        is: [underConstruction, createRequest]
+
+    /dates:
+      type: collection
+      description: Dates collection for the given vendor
+      get:
+        is: [filerableCollection, eventsCollection]
+
+    /eventDates:
+      type: collection
+      description: EventDates collection for the given vendor
+      get:
+        is: [filerableCollection, datesCollection]
+
+    /orders:
+      type: collection
+      description: Orders collection for the given vendor
+      get:
+        is: [filerableCollection, ordersCollection]
+      post:
+        is: [underConstruction, createRequest]
+
+
+/events:
+  displayName: Events
+  description: Events are activities, they refer to the event in general and not to a date, bookable items are dates
+  type: collection
+  get:
+    is: [filerableCollection, eventsCollection]
+
+  /{id}:
+    type: item
+    patch:
+      is: [underConstruction, patchRequest]
+    delete:
+      is: [underConstruction, deleteRequest]
+
+
+    /dates:
+      type: collection
+      description: Date collection for the given event
+      get:
+        is: [filerableCollection, datesCollection]
+      post:
+        is: [underConstruction, createRequest]
+
+
+/dates:
+  displayName: Dates
+  description: |
+    Dates are the actual bookable items, they are occurrences of events
+    this is a fast and slim request ideal for creating a calendar for example
+  type: collection
+  get:
+    is: [filerableCollection, datesCollection]
+
+  /{id}:
+    type: item
+    patch:
+      is: [underConstruction, patchRequest]
+    delete:
+      is: [underConstruction,deleteRequest]
+
+
+/eventDates:
+  displayName: EventDates
+  description: |
+    combined resource
+    delivers an object containing 2 arrays, one of type dates and one of type events
+    this is a much slower request and delivers a lot of data only use if displaying date lists with event details
+  type: collection
+  get:
+    is: [filerableCollection, datesCollection]
+
+/orders/{id}:
+    type: item
+    patch:
+      is: [underConstruction]
+
+/categories:
+  displayName: Categories
+  description: the bookingkit category tree
+  type: collection
+  get:
+    is: [underConstruction, ordersCollection]

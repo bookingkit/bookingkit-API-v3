@@ -1,0 +1,16 @@
+body:
+  application/json:
+    schema: <<resourcePathName | !singularize>>
+responses:
+  200:
+    description: successfull item update
+    body:
+      schema: <<resourcePathName | !singularize>>
+  400:
+    description: your request is malformated se error message for details
+    body:
+      schema: error
+  401:
+    description: you are not authorized to make this request
+    body:
+      schema: error
