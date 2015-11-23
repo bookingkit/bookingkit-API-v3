@@ -118,6 +118,7 @@ traits:
         is: [underConstruction, createRequest]
 
 
+
 /dates:
   displayName: Dates
   description: |
@@ -145,10 +146,17 @@ traits:
   get:
     is: [filerableCollection, datesCollection]
 
+/orders:
+  description: |
+    Orders MUST contain at least one ticket or voucher
+  get:
+    is: [underConstruction, filerableCollection, ordersCollection]
+  post:
+    is: [underConstruction, createRequest]
 /orders/{id}:
     type: item
     patch:
-      is: [underConstruction]
+      is: [underConstruction, patchRequest]
 
 /categories:
   displayName: Categories

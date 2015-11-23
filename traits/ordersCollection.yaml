@@ -16,3 +16,10 @@ queryParameters:
       will sort results by vendor ASC, date desc
     enum:
       - name
+      - date
+  start_date:
+    type: date
+    description: return orders placed later or equal to this date (Y-m-d H:i:s)
+  end_date:
+    type: date
+    description: return orders placed earlier or equal to this date (Y-m-d H:i:s)
