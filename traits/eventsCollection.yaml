@@ -7,15 +7,15 @@ queryParameters:
   category:
     type: integer
     description: filter by category id, get a complete list of categories from the categories resource
-  accept-vendors:
+  accept_vendors:
     type: string
     description: comma separated list of accepted vendor ids
-  exclude-vendors:
+  exclude_vendors:
     type: string
     description: comma separated list of rejected vendor ids
-  min-price:
+  min_price:
     type: number
-  max-price:
+  max_price:
     type: number
   order:
     type: string

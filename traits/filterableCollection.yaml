@@ -16,3 +16,12 @@ queryParameters:
     type: string
     description: comma separated list of item properties that should be returned
     default: all
+  with_count:
+    type: boolean
+    default: false
+    description: |
+      if set the request will return an X-Total_Count header used for pagination
+      with the count of the filtered collection ignoring offset and limit
+      **USE ONLY IF NECESSARY** this obviously makes every request a lot slower
+      see the Request documentation for information on showing the "next page" link
+      we stringly advise leaving this option to false
