@@ -150,7 +150,7 @@ traits:
   description: |
     Orders MUST contain at least one ticket or voucher
   get:
-    is: [underConstruction, filerableCollection, ordersCollection]
+    is: [filerableCollection, ordersCollection]
   post:
     is: [underConstruction, createRequest]
 /orders/{id}:
@@ -163,4 +163,4 @@ traits:
   description: the bookingkit category tree
   type: collection
   get:
-    is: [underConstruction, ordersCollection]
+    is: [underConstruction]

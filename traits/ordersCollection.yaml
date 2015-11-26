@@ -2,9 +2,8 @@ queryParameters:
   match:
     description: |
       searches the string within therse proterties:
-      - code
-      - user_name
-      - bookings.code
+      - name
+      - email
   order:
     type: string
     description: |
@@ -17,6 +16,7 @@ queryParameters:
     enum:
       - name
       - date
+      - vendor_id
   start_date:
     type: string
     description: return orders placed later or equal to this date (YYYY-MM-DDThh:mm:ssZ, UTC)
@@ -25,3 +25,11 @@ queryParameters:
     type: string
     description: return orders placed earlier or equal to this date (YYYY-MM-DDThh:mm:ssZ, UTC)
     pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$
+  status:
+    type: string
+    description: return orders of specified status
+    default: ACCEPTED
+    enum:
+      - ACCEPTED
+      - CANCELED
+      - PENDING

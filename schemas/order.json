@@ -5,12 +5,12 @@
   "title": "Order",
   "properties": {
     "id": {
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "uniquie identifyer"
     },
     "code": {
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "uniquie code, communicated to the end user"
     },
@@ -18,6 +18,11 @@
       "required": false,
       "type": "string",
       "description": "third party systems that generated this order my write their own identifyer here"
+    },
+    "vendor_id":{
+        "required": true,
+        "type": "string",
+        "description": "uniquie identifyer of the vendor"
     },
     "date": {
       "required": true,

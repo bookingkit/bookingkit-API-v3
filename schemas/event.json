@@ -191,7 +191,7 @@
       ]
     },
     "first_date": {
-      "required": true,
+      "required": false,
       "type": "string",
       "format": "date-time",
       "description": "startig time of the next event",
