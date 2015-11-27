@@ -33,3 +33,13 @@ queryParameters:
       - ACCEPTED
       - CANCELED
       - PENDING
+  accept_external_reference:
+    type: string
+    description: |
+      comma separated list of accepted external refecence codes
+      can be used to load by external reference
+  accept_code:
+    type: string
+    description: |
+      comma separated list of accepted order codes
+      can be used to load by external reference
