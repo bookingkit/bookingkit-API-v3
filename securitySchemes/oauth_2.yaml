@@ -16,13 +16,7 @@ describedBy:
         Used to send a valid OAuth 2 access token. Do not use together with
         the "Authorization" header
       type: string
-  responses:
-    404:
-      description: Unauthorized
 settings:
-  authorizationUri: TBA/oauth/authorize
-  accessTokenUri: TBA/oauth/access_token
+  authorizationUri: http://lapi.bookingkit.de/oauth/authorize
+  accessTokenUri: http://lapi.bookingkit.de/oauth/token
   authorizationGrants: [ credentials ]
-  scopes:
-    - "owner"
-    - "marketplace"

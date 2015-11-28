@@ -1,7 +1,7 @@
 #%RAML 0.8
 title: bookinkit api
 version: v3
-baseUri: TBA
+baseUri: http://lapi.bookingkit.de/v3/
 mediaType: application/json
 
 #protocols: [HTTPS]
@@ -100,6 +100,8 @@ traits:
   type: collection
   get:
     is: [filerableCollection, eventsCollection]
+  post:
+    is: [underConstruction, createRequest]
 
   /{id}:
     type: item
@@ -152,11 +154,11 @@ traits:
   get:
     is: [filerableCollection, ordersCollection]
   post:
-    is: [underConstruction, createRequest]
+    is: [createRequest]
 /orders/{id}:
     type: item
     patch:
-      is: [underConstruction, patchRequest]
+      is: [patchRequest]
 
 /categories:
   displayName: Categories
