@@ -5,21 +5,63 @@ baseUri: https://api.bookingkit.de/v3/
 mediaType: application/json
 protocols: [HTTPS]
 documentation:
-  - title: About the API
+  - title: Introduction into the API
     content: |
-      ## REST API
+      # REST API
       The bookingkit API is designed as RESTful API, all data is returned in JSON format so it can easily be used in all environments.
       For more information regarding RESTful APIs please visit [wikipedia.com](http://en.wikipedia.org/wiki/Representational_state_transfer)
 
-      ## Request structure
-      `TODO`
-  - title: Under Construction
+      # Basic Request structure
+      ### Building the URL's
+      The current version of the api is v3 so all requests will be send to
+      ```
+      https://api.bookingkit.de/v3/
+      ```
+      The to request a resource collection append the name of that collection to the URL like so
+      ```
+      https://api.bookingkit.de/v3/events/
+      ```
+      A complete list of the availale resources is listed below. To load a single item use it's id as in this example:
+      ```
+      https://api.bookingkit.de/v3/events/0cc175b9c0f1b6a831c399e269772661/
+      ```
+      Related resources may also be requested
+      ```
+      https://api.bookingkit.de/v3/events/0cc175b9c0f1b6a831c399e269772661/dates/
+      ```
+      ### Filtering the results
+      Resource collections may and should be fildered to fit individual needs. A conplete list of query parameters can be found for each request. The order of the query parameters is not imporant and all are optional so only the ones that are needed must be send.
+      ```
+      https://api.bookingkit.de/v3/dates/?start_date=2016-01-01T10:00:00Z&limit=10
+      ```
+
+      # Oauth Autentification
+      every request to the API requires a valid Token. Tokens can be requested from https://api.bookingkit.de/oauth/token with the provided client_id and client_secret. You can use the provided testing tool here to test yout API calls.
+
+      # Support
+      If you have any questions on implementing our APU or you would like to request acces to the API contact our customer support at [service@bookingkit.de](mailto:service@bookingkit.de)
+
+  - title: Pagination
+    content: |
+      # Best Practice
+      We encourage you to use an open end Pagination, meaning that the pagination does not have the information on which the last page is but reather will only comunicate if there is a "next page". For this purpuse every collection request will have Link Headers provinding a link to the "next page", "previous page" and first page.
+      This is by far the better method of creating a pagination of the bookingkit resources and a lot faster then the standard way. For more information on link headers read: [W3.org on weblinks](http://www.w3.org/TR/html401/struct/links.html#h-12.1.2), [RFC5988 specification](https://tools.ietf.org/html/rfc5988)
+      The link headers contain automatic pagination as long as a pagesize was set through the *limit* query parameter
+
+      # Slow version
+      **We do ont encourage you to use this method unless absolutely necessary and only for collections with a low count.**
+      Collection requests support the optional query parameter *with_count* ist set to true the response will also contain a "X-Toatal_Count" header informing you of the total count of the filtered collection ignoring of course limit and offset. Also a link Header with realtion last will be send.
+      As you can imagine this renders the requests unnecessarily slow.
+
+      ### Important note
+      The bookingkit api has an absolute maximul limit set to 100.000 entries, setting a limit higher that this has no effect at all. Also using *with_count* for a collection that returns 100.000 items has no effect as the X-Total_Count header will allways be 100.000.
+      Use the automated pagination solution described above for such large collections.
+
+  - title: |
+      ! Under Construction !
     content: |
       ## Structure
       Please be advised that the specification is still under construction missing areas will be completed shortly. Changes to current definitions are not to be expected. Should such changes be necessary we will clearly communicate them to our partners.
-
-      ## API server
-      The API v3 is not live at this point, we are working on deploying it soon. Until such time the URL's of the endpoints are to be announced (TBA).
 
 securitySchemes:
   - oauth_2_0: !include securitySchemes/oauth_2.yaml
