@@ -32,7 +32,7 @@
       "description": "date when the order was generated, may not be changed"
     },
     "expire_date": {
-      "required": "false",
+      "required": false,
       "type": "string",
       "format": "date-time",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",

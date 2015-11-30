@@ -17,6 +17,6 @@ describedBy:
         the "Authorization" header
       type: string
 settings:
-  authorizationUri: http://lapi.bookingkit.de/oauth/authorize
-  accessTokenUri: http://lapi.bookingkit.de/oauth/token
+  authorizationUri: https://api.bookingkit.de/oauth/authorize
+  accessTokenUri: https://api.bookingkit.de/oauth/token
   authorizationGrants: [ credentials ]
