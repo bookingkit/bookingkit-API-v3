@@ -41,22 +41,31 @@ documentation:
       # Support
       If you have any questions on implementing our API or you would like to request access to the API contact our customer support at [service@bookingkit.de](mailto:service@bookingkit.de)
 
-  - title: Pagination
+  - title: Advanced usage
     content: |
-      # Best Practice
+      # Pagination
+
+
+      ## Best Practice
       We encourage you to use an open end Pagination, meaning that the pagination does not have the information on which the last page is but rather will only communicate if there is a "next page". For this purpose every collection request will have Link Headers providing a link to the "next page", "previous page" and first page.
       This is by far the better method of creating a pagination of the bookingkit resources and a lot faster then the standard way. For more information on link headers read: [W3.org on weblinks](http://www.w3.org/TR/html401/struct/links.html#h-12.1.2), [RFC5988 specification](https://tools.ietf.org/html/rfc5988)
       The link headers contain automatic pagination as long as a page size was set through the *limit* query parameter
 
-      # Slow version
+      ## Slow version
       **We do not encourage you to use this method unless absolutely necessary and only for collections with a low count.**
       Collection requests support the optional query parameter *with_count* is set to true the response will also contain a "X-Total_Count" header informing you of the total count of the filtered collection ignoring of course limit and offset. Also a link Header with relation last will be send.
       As you can imagine this renders the requests unnecessarily slow.
 
-      ### Important note
+      ## Important note
       The bookingkit API has an absolute maximum limit set to 100.000 entries, setting a limit higher that this has no effect at all. Also using *with_count* for a collection that returns 100.000 items has no effect as the X-Total_Count header will always be 100.000.
       Use the automated pagination solution described above for such large collections.
 
+
+      # Performance
+      Performance of the API is a constant concern, we encourage you to use the provided **fields** query paramenter to only request data that you need. Also use limits whenever appliable if you only need a limited amount of results.
+      As mentioned above try to avoid unnecessary **with_count** requests
+
+      All Responses are gzipped
   - title: |
       ! Under Construction !
     content: |
