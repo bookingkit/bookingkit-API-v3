@@ -30,6 +30,11 @@
       "required": true,
       "description": "total number of seats / persons",
       "type": "integer"
+    },
+    "checkout_url": {
+      "required": true,
+      "type": "string",
+      "description": "checkout url to book through the bookingkit system"
     }
   }
 }
