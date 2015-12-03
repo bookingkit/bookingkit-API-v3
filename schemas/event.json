@@ -82,7 +82,7 @@
     },
     "youtubeVideoId": {
       "required": false,
-      "type": "boolean",
+      "type": "string",
       "description": "Youtube video id, links / ebmedds MUST be implemendet client side"
     },
     "images": {
