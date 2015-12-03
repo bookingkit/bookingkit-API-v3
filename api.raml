@@ -38,6 +38,9 @@ documentation:
       # Oauth Authentication
       Every request to the API requires a valid Token. Tokens can be requested from HTTPS://api.bookingkit.de/oauth/token with the provided client_id and client_secret. You can use the provided testing tool here to test your API calls.
 
+      # Overriding HTTP method
+      Clients that cannot send PATCH or DELETE requests may also send a POST request and append the query paramenter "method" to override the HTTP request type. Only the values "PATCH" and "DELETE" are accepted
+
       # Support
       If you have any questions on implementing our API or you would like to request access to the API contact our customer support at [service@bookingkit.de](mailto:service@bookingkit.de)
 

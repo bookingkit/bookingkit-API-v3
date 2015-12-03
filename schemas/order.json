@@ -167,6 +167,12 @@
                       "type": "string",
                       "description": "unique identifyer"
                     },
+                    "status": {
+                      "required": true,
+                      "type": "string",
+                      "enum": ["ACCEPTED", "CANCELED"],
+                      "description": "status of the participant"
+                    },
                     "name": {
                       "required": false,
                       "type": "string",
@@ -220,7 +226,7 @@
                 "description": "status of the order"
             },
             "voucher": {
-              "required": false,
+              "required": true,
               "type": "object",
               "properties": {
                 "code": {
