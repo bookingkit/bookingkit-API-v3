@@ -71,13 +71,6 @@
       "type": "string",
       "description": "order comments"
     },
-    "payment_date": {
-      "required": false,
-      "type": "string",
-      "format": "date-time",
-      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
-      "description": "if filled order is marked as payed"
-    },
     "cancellation_date": {
       "required": false,
       "type": "string",
