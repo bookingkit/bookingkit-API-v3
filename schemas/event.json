@@ -75,6 +75,21 @@
       "required": false,
       "type": "string"
     },
+    "advice":{
+        "comment": "vendor advice concerning participants",
+        "required": false,
+        "type": "string"
+    },
+    "hint":{
+        "comment": "vendor advice concerning the order",
+        "required": false,
+        "type": "string"
+    },
+    "participant_hint":{
+        "comment": "question or advice directed torwards each participant, will be delivered in participant comment field",
+        "required": false,
+        "type": "string"
+    },
     "vendor_name": {
       "required": true,
       "type": "string",

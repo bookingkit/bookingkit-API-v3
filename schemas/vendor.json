@@ -34,6 +34,16 @@
       "required": false,
       "type": "string",
       "description": "URL of vendor logo"
+    },
+    "terms":{
+      "required": false,
+      "type": "string",
+      "description": "vendor business terms"
+    },
+    "bill_country":{
+      "required": true,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code"
     }
   }
 }
