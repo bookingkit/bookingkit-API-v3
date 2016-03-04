@@ -31,6 +31,13 @@
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
       "description": "date when the order was generated, may not be changed"
     },
+    "payment_date": {
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "if filled order is marked as payed"
+    },
     "expire_date": {
       "required": false,
       "type": "string",
