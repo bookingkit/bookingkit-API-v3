@@ -44,5 +44,5 @@ queryParameters:
       - comma separated coordinates
       - MUST be exactly 4 coordinates that describe a rectangle
       - MUST respect following order {minLat,minLng,maxLat,maxLng}
-    example: 52.069896815019,12.665231159637,52.970116384981,14.144676840363
+      - example: 52.069896815019,12.665231159637,52.970116384981,14.144676840363
     pattern: ^([0-9\.]+),([0-9\.]+),([0-9\.]+),([0-9\.]+)$
