@@ -100,6 +100,11 @@
       "type": "string",
       "description": "Youtube video id, links / ebmedds MUST be implemendet client side"
     },
+    "voucher_checkout_url": {
+      "required": true,
+      "type": "string",
+      "description": "checkout url to buy a voucher through the bookingkit system"
+    },
     "images": {
       "required": false,
       "type": "array",

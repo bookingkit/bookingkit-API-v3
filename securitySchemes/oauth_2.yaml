@@ -20,3 +20,4 @@ settings:
   authorizationUri: https://api.bookingkit.de/oauth/authorize
   accessTokenUri: https://api.bookingkit.de/oauth/token
   authorizationGrants: [ credentials ]
+  scopes: [ calendar_read, calendar_write, orders_read_owned, orders_read_all, orders_write_owned, orders_write_all ]
