@@ -134,13 +134,15 @@ traits:
 
     /eventDates:
       type: collection
-      description: |
-        EventDates collection for the given vendor
-        **Attention:**
-        due to the large amount of date inherit to this request it defaults to de minimum
-        amount of fileds, please request the fields you need specificaly
+      description: EventDates collection for the given vendor
       get:
         is: [filerableCollection, datesCollection]
+        description: |
+          Get a list of eventDates in array form
+          since api console does not yet support schema relations view eventDate schema for details
+          **Attention:**
+          due to the large amount of date inherit to this request it defaults to de minimum
+          amount of fileds, please request the fields you need specificaly 
 
     /orders:
       type: collection
@@ -201,12 +203,15 @@ traits:
     combined resource
     delivers an object containing 2 arrays, one of type dates and one of type events
     this is a much slower request and delivers a lot of data only use if displaying date lists with event details
-    **Attention:**
-    due to the large amount of date inherit to this request it defaults to de minimum
-    amount of fileds, please request the fields you need specificaly
   type: collection
   get:
     is: [filerableCollection, datesCollection]
+    description: |
+      Get a list of eventDates in array form
+      since api console does not yet support schema relations view eventDate schema for details
+      **Attention:**
+      due to the large amount of date inherit to this request it defaults to de minimum
+      amount of fileds, please request the fields you need specificaly
 
 /orders:
   description: |
