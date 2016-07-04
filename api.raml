@@ -134,7 +134,11 @@ traits:
 
     /eventDates:
       type: collection
-      description: EventDates collection for the given vendor
+      description: |
+        EventDates collection for the given vendor
+        **Attention:**
+        due to the large amount of date inherit to this request it defaults to de minimum
+        amount of fileds, please request the fields you need specificaly
       get:
         is: [filerableCollection, datesCollection]
 
@@ -197,6 +201,9 @@ traits:
     combined resource
     delivers an object containing 2 arrays, one of type dates and one of type events
     this is a much slower request and delivers a lot of data only use if displaying date lists with event details
+    **Attention:**
+    due to the large amount of date inherit to this request it defaults to de minimum
+    amount of fileds, please request the fields you need specificaly
   type: collection
   get:
     is: [filerableCollection, datesCollection]
