@@ -208,6 +208,11 @@
                       "required": true,
                       "type": "string",
                       "description": "unique identifyer of the price for this participant"
+                    },
+                    "code": {
+                      "required": false,
+                      "type": "string",
+                      "description": "unique identifyer for this participat, can be used for ticket validation"
                     }
                   }
                 }
