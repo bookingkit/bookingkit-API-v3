@@ -137,7 +137,7 @@
               "description": "uniquie identifyer of the reserved date"
             },
             "event_id": {
-              "required": true,
+              "required": false,
               "type": "string",
               "description": "uniquie identifyer of the reserved event"
             },
