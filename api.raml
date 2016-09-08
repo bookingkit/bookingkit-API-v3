@@ -60,7 +60,7 @@ documentation:
       As you can imagine this renders the requests unnecessarily slow.
 
       ## Important note
-      The bookingkit API has an absolute maximum limit set to 100.000 entries, setting a limit higher that this has no effect at all. Also using *with_count* for a collection that returns 100.000 items has no effect as the X-Total_Count header will always be 100.000.
+      The bookingkit API has an absolute maximum limit set to 10.000 entries, setting a limit higher that this has no effect at all. Also using *with_count* for a collection that returns 100.000 items has no effect as the X-Total_Count header will always be 100.000.
       Use the automated pagination solution described above for such large collections.
 
 
