@@ -44,6 +44,11 @@
       "required": true,
       "type": "string",
       "description": "ISO 3166-1 alpha-2 country code"
+    },
+    "country_of_residence":{
+      "required": true,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code"
     }
   }
 }

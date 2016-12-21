@@ -77,6 +77,11 @@
       "minLength": 4,
       "description": "billing name"
     },
+    "company": {
+      "required": false,
+      "type": "string",
+      "description": "billing company"
+    },
     "phone": {
       "required": false,
       "type": "string",
@@ -102,6 +107,11 @@
       "type": "string",
       "description": "billing city"
     },
+    "country":{
+      "required": false,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code"
+    },
     "comment": {
       "required": false,
       "type": "string",
@@ -113,6 +123,11 @@
       "format": "date-time",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
       "description": "date at which the order was cancelled"
+    },
+    "total_invoice":{
+      "required": false,
+      "type": "number",
+      "description": "total value of this order for invoice purpose"
     },
     "tickets": {
       "required": false,
@@ -205,9 +220,14 @@
                       "description": "comments concerning this participant"
                     },
                     "price_id": {
-                      "required": true,
+                      "required": false,
                       "type": "string",
-                      "description": "unique identifyer of the price for this participant"
+                      "description": "unique identifyer of the price for this participant, you MUST provide a price_id or  price_value"
+                    },
+                    "price_value": {
+                      "required": false,
+                      "type": "number",
+                      "description": "price value, not available for all api clients"
                     },
                     "code": {
                       "required": false,
