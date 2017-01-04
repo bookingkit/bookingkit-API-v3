@@ -91,9 +91,9 @@
         "type": "string"
     },
     "vendor_name": {
-      "required": true,
+      "required": false,
       "type": "string",
-      "description": "vendor name, usualy a company name"
+      "description": "vendor name, usualy a company name, will allways be delivered but not necessary for incoming requests"
     },
     "youtubeVideoId": {
       "required": false,
@@ -101,12 +101,12 @@
       "description": "Youtube video id, links / ebmedds MUST be implemendet client side"
     },
     "voucher_checkout_url": {
-      "required": true,
+      "required": false,
       "type": "string",
-      "description": "checkout url to buy a voucher through the bookingkit system"
+      "description": "checkout url to buy a voucher through the bookingkit system, will allways be delivered but not necessary for incoming requests"
     },
     "images": {
-      "required": false,
+      "required": true,
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
@@ -130,7 +130,7 @@
       ]
     },
     "categories": {
-      "description": "full ordered category tree path",
+      "description": "full ordered category tree path, on incoming requests the deepest level id is sufficient",
       "required": true,
       "type": "array",
       "items": [
@@ -138,7 +138,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "required": false,
+              "required": true,
               "type": "integer",
               "description": "uniquie identifyer"
             },
