@@ -5,7 +5,7 @@
   "title": "Date Patch",
   "properties": {
     "event_id": {
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "uniquie identifyer of parent event"
     },
@@ -17,12 +17,12 @@
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
     },
     "available_slots": {
-      "required": true,
+      "required": false,
       "description": "number of available seats / persons",
       "type": "integer"
     },
     "total_slots": {
-      "required": true,
+      "required": false,
       "description": "total number of seats / persons",
       "type": "integer"
     }
