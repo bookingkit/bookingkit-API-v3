@@ -20,4 +20,4 @@ patch:
   securedBy: [oauth_2_0]
   body:
     application/json:
-      schema: <<resourcePathName | !singularize>>
+      schema: <<resourcePathName | !singularize>>_patch

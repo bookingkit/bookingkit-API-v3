@@ -2,13 +2,8 @@
   "required": true,
   "$schema": "http://json-schema.org/draft-03/schema",
   "type": "object",
-  "title": "Date",
+  "title": "Date Patch",
   "properties": {
-    "id": {
-      "required": true,
-      "type": "string",
-      "description": "uniquie identifyer"
-    },
     "event_id": {
       "required": true,
       "type": "string",
@@ -30,11 +25,6 @@
       "required": true,
       "description": "total number of seats / persons",
       "type": "integer"
-    },
-    "checkout_url": {
-      "required": false,
-      "type": "string",
-      "description": "checkout url to book through the bookingkit system"
     }
   }
 }

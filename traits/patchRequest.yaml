@@ -1,13 +1,13 @@
 body:
   application/json:
-    schema: <<resourcePathName | !singularize>>
+    schema: <<resourcePathName | !singularize>>_patch
 responses:
   200:
     description: successfull item update
     body:
       schema: <<resourcePathName | !singularize>>
   400:
-    description: your request is malformated se error message for details
+    description: your request is malformated see error message for details
     body:
       schema: error
   401:

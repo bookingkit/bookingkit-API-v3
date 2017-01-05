@@ -84,14 +84,15 @@ schemas:
   - vendor: !include schemas/vendor.json
   - vendors: !include schemas/vendors.json
   - event: !include schemas/event.json
+  - event_patch: !include schemas/event_patch.json
   - events: !include schemas/events.json
   - date: !include schemas/date.json
   - dates: !include schemas/dates.json
   - eventDates: !include schemas/eventDates.json
   - order: !include schemas/order.json
+  - order_patch: !include schemas/order_patch.json
   - orders: !include schemas/orders.json
   - error: !include schemas/error.json
-  - create_event: !include schemas/create_event.json
 
 resourceTypes:
   - collection: !include resourceTypes/collection.yaml
@@ -125,13 +126,15 @@ traits:
       get:
         is: [filerableCollection, eventsCollection]
       post:
-        is: [underConstruction, createRequest]
+        is: [createRequest]
 
     /dates:
       type: collection
       description: Dates collection for the given vendor
       get:
         is: [filerableCollection, eventsCollection]
+      post:
+        is: [createRequest]
 
     /eventDates:
       type: collection
@@ -161,12 +164,12 @@ traits:
   get:
     is: [filerableCollection, eventsCollection]
   post:
-    is: [underConstruction, createRequest]
+    is: [createRequest]
 
   /{id}:
     type: item
     patch:
-      is: [underConstruction, patchRequest]
+      is: [patchRequest]
     delete:
       is: [underConstruction, deleteRequest]
 
@@ -177,7 +180,7 @@ traits:
       get:
         is: [filerableCollection, datesCollection]
       post:
-        is: [underConstruction, createRequest]
+        is: [createRequest]
 
 
 
@@ -189,11 +192,13 @@ traits:
   type: collection
   get:
     is: [filerableCollection, datesCollection]
+  post:
+    is: [createRequest]
 
   /{id}:
     type: item
     patch:
-      is: [underConstruction, patchRequest]
+      is: [patchRequest]
     delete:
       is: [underConstruction,deleteRequest]
 

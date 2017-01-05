@@ -2,7 +2,7 @@
   "required": true,
   "$schema": "http://json-schema.org/draft-03/schema",
   "type": "object",
-  "title": "Order",
+  "title": "Order Patch",
   "properties": {
     "external_reference": {
       "required": false,
