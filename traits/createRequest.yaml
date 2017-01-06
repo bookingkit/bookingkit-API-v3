@@ -1,3 +1,4 @@
+description: Create a new "<<resourcePathName | !singularize>>" item
 body:
   application/json:
     schema: <<resourcePathName | !singularize>>

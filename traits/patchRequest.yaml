@@ -1,3 +1,4 @@
+description: Update an existing "<<resourcePathName | !singularize>>" item
 body:
   application/json:
     schema: <<resourcePathName | !singularize>>_patch

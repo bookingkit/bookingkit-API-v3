@@ -113,7 +113,7 @@
       "items": [
         {
           "type": "string",
-          "description": "image URL"
+          "description": "image URL, for post you can provide the image as an URL or a base64 encoded string"
         }
       ]
     },
