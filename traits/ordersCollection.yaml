@@ -41,6 +41,8 @@ queryParameters:
       - ACCEPTED
       - CANCELED
       - PENDING
+      - DECLINED
+      - OPEN
   accept_external_reference:
     type: string
     description: |

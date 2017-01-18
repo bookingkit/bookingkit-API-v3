@@ -19,7 +19,7 @@
     "status": {
       "required": false,
       "type": "string",
-      "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+      "enum": ["ACCEPTED", "CANCELED", "PENDING", "DECLINED", "OPEN"],
       "description": "status of the order"
     },
     "lang": {
