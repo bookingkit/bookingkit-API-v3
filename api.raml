@@ -1,6 +1,6 @@
 #%RAML 0.8
 title: bookingkit api
-version: v3.3
+version: v3.4
 baseUri: https://api.bookingkit.de/v3
 mediaType: application/json
 protocols: [HTTPS]
@@ -91,11 +91,14 @@ schemas:
   - date_patch: !include schemas/date_patch.json
   - dates: !include schemas/dates.json
   - eventDates: !include schemas/eventDates.json
+  - datesBatch: !include schemas/datesBatch.json
+  - datesBatch_patch: !include schemas/datesBatch_patch.json
   - order: !include schemas/order.json
   - order_patch: !include schemas/order_patch.json
   - orders: !include schemas/orders.json
   - categories: !include schemas/categories.json
   - error: !include schemas/error.json
+  - batch_response: !include schemas/batch_response.json
 
 resourceTypes:
   - collection: !include resourceTypes/collection.yaml
@@ -210,11 +213,18 @@ traits:
   description: |
     Dates are the actual bookable items, they are occurrences of events
     this is a fast and slim request ideal for creating a calendar for example
-  type: collection
   post:
     is: [createRequest]
+    responses:
+      201:
+        body:
+          schema: batch_response
   patch:
     is: [patchRequest]
+    responses:
+      200:
+        body:
+          schema: batch_response
 
 /eventDates:
   displayName: EventDates

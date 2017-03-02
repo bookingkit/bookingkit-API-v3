@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Batch Response",
+  "properties": {
+    "status": {
+      "required": true,
+      "type": "string",
+      "enum": ["SUCCESS"],
+      "description": "batch processing status"
+    },
+    "processed_items":{
+      "required": true,
+      "type": "integer",
+      "description": "processed item count"
+    }
+  }
+}
