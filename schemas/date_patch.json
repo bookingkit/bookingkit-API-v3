@@ -4,6 +4,11 @@
   "type": "object",
   "title": "Date Patch",
   "properties": {
+    "date_id": {
+      "required": false,
+      "type": "string",
+      "description": "uniquie identifyer of date"
+    },
     "event_id": {
       "required": false,
       "type": "string",

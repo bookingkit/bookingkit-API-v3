@@ -205,6 +205,16 @@ traits:
     delete:
       is: [underConstruction,deleteRequest]
 
+/datesBatch:
+  displayName: DatesBatch
+  description: |
+    Dates are the actual bookable items, they are occurrences of events
+    this is a fast and slim request ideal for creating a calendar for example
+  type: collection
+  post:
+    is: [createRequest]
+  patch:
+    is: [patchRequest]
 
 /eventDates:
   displayName: EventDates
