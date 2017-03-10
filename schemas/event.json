@@ -216,16 +216,16 @@
       "format": "date-time",
       "description": "startig time of the next event",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
+    },
+    "min_participants": {
+      "required": false,
+      "type": "integer",
+      "description": "minimum number of concurrent participants for one event"
+    },
+    "latest_booking_time": {
+      "required": false,
+      "type": "integer",
+      "description": "time (in minutes) before event start when event not bookable"
     }
-  },
-  "min_participants": {
-    "required": false,
-    "type": "integer",
-    "description": "minimum number of concurrent participants for one event"
-  },
-  "latest_booking_time": {
-    "required": false,
-    "type": "integer",
-    "description": "time (in minutes) before event start when event not bookable"
   }
 }
