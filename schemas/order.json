@@ -5,12 +5,12 @@
   "title": "Order",
   "properties": {
     "id": {
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "uniquie identifyer"
     },
     "code": {
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "uniquie code, communicated to the end user"
     },
