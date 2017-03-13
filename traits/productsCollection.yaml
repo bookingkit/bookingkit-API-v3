@@ -1,0 +1,29 @@
+queryParameters:
+  available:
+    type: boolean
+    description: only return products with at least one in stock. By default you receive all
+  requires_shipping:
+    type: boolean
+    description: only return products that requires shipping. By default you receive all
+  accept_vendors:
+    type: string
+    description: comma separated list of accepted vendor ids
+  exclude_vendors:
+    type: string
+    description: comma separated list of rejected vendor ids
+  min_price:
+    type: number
+  max_price:
+    type: number
+  order:
+    type: string
+    description: |
+      use -/+ in front of the attribute to specify the soriting direction (DESC / ASC)
+      if no modifier is provided default is +
+      multiple values MAY be provided comma separated
+      example:
+        `\<<resourcePathName>>?order=vendor,-date`
+      will sort results by vendor ASC, date desc
+    enum:
+      - name
+      - price

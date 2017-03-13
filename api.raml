@@ -99,6 +99,9 @@ schemas:
   - categories: !include schemas/categories.json
   - error: !include schemas/error.json
   - batch_response: !include schemas/batch_response.json
+  - products: !include schemas/products.json
+  - product: !include schemas/product.json
+  - product_patch: !include schemas/product_patch.json
 
 resourceTypes:
   - collection: !include resourceTypes/collection.yaml
@@ -115,6 +118,7 @@ traits:
   - createRequest: !include traits/createRequest.yaml
   - deleteRequest: !include traits/deleteRequest.yaml
   - patchRequest: !include traits/patchRequest.yaml
+  - productsCollection: !include traits/productsCollection.yaml
 
 /vendors:
   displayName: Vendor
@@ -162,6 +166,21 @@ traits:
       post:
         is: [createRequest]
 
+/products:
+  displayName: Products
+  description: Products are available in addition to the order on bookingkit.de
+  type: collection
+  get:
+    is: [filerableCollection, productsCollection]
+  post:
+    is: [createRequest]
+
+  /{id}:
+    type: item
+    patch:
+      is: [patchRequest]
+    delete:
+      is: [deleteRequest]
 
 /events:
   displayName: Events

@@ -1,0 +1,118 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Product patch",
+  "properties": {
+    "name": {
+      "required": true,
+      "type": "string",
+      "description": "product name"
+    },
+    "description": {
+      "required": true,
+      "type": "string",
+      "description": "product description"
+    },
+    "total": {
+      "required": false,
+      "type": "integer",
+      "description": "total product quantity in stock"
+    },
+    "available": {
+      "required": false,
+      "type": "integer",
+      "description": "product quantity available for purchase"
+    },
+    "price": {
+      "required": true,
+      "type": "number",
+      "description": "product price value"
+    },
+    "currency": {
+      "required": false,
+      "type": "string",
+      "description": "product price currency"
+    },
+    "shipping_address": {
+      "required": false,
+      "type": "integer",
+      "description": "define if product requires shipping"
+    },
+    "dependencies": {
+      "required": false,
+      "type": "array",
+      "description": "product dependencies",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "events": {
+              "required": false,
+              "type": "array",
+              "description": "dependant events",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "required": true,
+                      "type": "integer",
+                      "description": "event id"
+                    },
+                    "prices": {
+                      "required": false,
+                      "type": "array",
+                      "description": "only for specific event price ids",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "required": true,
+                              "type": "integer",
+                              "description": "event price id"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "vouchers": {
+              "required": false,
+              "type": "array",
+              "description": "if product is dependant on voucher",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "events": {
+                      "required": false,
+                      "type": "array",
+                      "description": "only vouchers for specific event ids",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "required": true,
+                              "type": "integer",
+                              "description": "event id"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
