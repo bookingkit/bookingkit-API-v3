@@ -20,7 +20,7 @@
       "description": "third party systems that generated this order my write their own identifyer here"
     },
     "vendor_id":{
-        "required": true,
+        "required": false,
         "type": "string",
         "description": "uniquie identifyer of the vendor"
     },
