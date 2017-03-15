@@ -205,6 +205,50 @@
           }
         }
       ]
+    },
+    "products": {
+      "required": false,
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "product_id": {
+              "required": true,
+              "type": "string",
+              "description": "product id"
+            },
+            "status": {
+              "required": false,
+              "type": "string",
+              "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+              "description": "status of the order"
+            },
+            "title": {
+              "required": false,
+              "type": "string",
+              "description": "item title"
+            },
+            "price": {
+              "required": false,
+              "type": "number",
+              "description": "price value, not available for all api clients"
+            },
+            "amount": {
+              "required": false,
+              "type": "integer",
+              "description": "items ammount"
+            },
+            "currency": {
+              "required": false,
+              "type": "string",
+              "maxLength": 3,
+              "minLength": 3,
+              "description": "item currency"
+            }
+          }
+        }
+      ]
     }
   }
 }
