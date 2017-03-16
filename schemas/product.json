@@ -67,7 +67,7 @@
                   "properties": {
                     "id": {
                       "required": true,
-                      "type": "integer",
+                      "type": "string",
                       "description": "event id"
                     },
                     "prices": {
@@ -109,7 +109,7 @@
                           "properties": {
                             "id": {
                               "required": true,
-                              "type": "integer",
+                              "type": "string",
                               "description": "event id"
                             }
                           }
