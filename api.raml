@@ -36,7 +36,38 @@ documentation:
       ```
 
       # Oauth Authentication
-      Every request to the API requires a valid Token. Tokens can be requested from HTTPS://api.bookingkit.de/oauth/token with the provided client_id and client_secret. You can use the provided testing tool here to test your API calls.
+      Every request to the API requires a valid Token. Tokens can be requested from https://api.bookingkit.de/oauth/token with the provided client_id , client_secret and grant_type. You can use the provided testing tool here to test your API calls. Example of token request (PHP):
+      ```
+      $curl = curl_init('https://api.bookingkit.de/oauth/token');
+      curl_setopt($curl, CURLOPT_POST, true);
+      curl_setopt(
+          $curl,
+          CURLOPT_POSTFIELDS,
+          [
+              'client_id' => 'demo',
+              'client_secret' => 'demo',
+              'grant_type' => 'client_credentials',
+          ]
+      );
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+      $result = curl_exec($curl);
+      ```
+      In case of success you'll recive a json response with your access_token. Example of response:
+      ```
+      {"access_token":"134e8b2683a0e3b27dbb9420062b62eaf1d66f02","expires_in":3600,"token_type":"Bearer","scope":"calendar_read"}
+      ```
+      Now you can make requests to other API endpoints with authorization token in header (PHP):
+      ```
+      $curl = curl_init('https://api.bookingkit.de/v3/events/');
+      curl_setopt(
+          $curl,
+          CURLOPT_HTTPHEADER,
+          ['Authorization: Bearer 134e8b2683a0e3b27dbb9420062b62eaf1d66f02']
+      );
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+      $result = curl_exec($curl);
+      ```
+      When the token expires, request a new one.
 
       # Overriding HTTP method
       Clients that cannot send PATCH or DELETE requests may also send a POST request and append the query paramenter "method" to override the HTTP request type. Only the values "PATCH" and "DELETE" are accepted
