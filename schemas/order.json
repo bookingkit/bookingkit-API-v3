@@ -157,7 +157,7 @@
               "description": "uniquie identifyer of the reserved event"
             },
             "code": {
-              "required": true,
+              "required": false,
               "type": "string",
               "description": "unique code for this ticket"
             },
