@@ -136,6 +136,7 @@ schemas:
 
 resourceTypes:
   - collection: !include resourceTypes/collection.yaml
+  - date-sorted-collection: !include resourceTypes/date-sorted-collection.yaml
   - item: !include resourceTypes/item.yaml
 
 traits:
@@ -245,7 +246,7 @@ traits:
   description: |
     Dates are the actual bookable items, they are occurrences of events
     this is a fast and slim request ideal for creating a calendar for example
-  type: collection
+  type: date-sorted-collection
   get:
     is: [filerableCollection, datesCollection]
   post:
