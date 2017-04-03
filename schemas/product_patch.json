@@ -5,12 +5,12 @@
   "title": "Product patch",
   "properties": {
     "name": {
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "product name"
     },
     "description": {
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "product description"
     },
