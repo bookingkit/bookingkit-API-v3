@@ -38,12 +38,12 @@
     "location_lng": {
       "required": false,
       "type": "number",
-      "description": "geo coortinate"
+      "description": "geo coordinate"
     },
     "location_lat": {
       "required": false,
       "type": "number",
-      "description": "geo coortinate"
+      "description": "geo coordinate"
     },
     "meeting_location": {
       "required": false,
@@ -53,20 +53,20 @@
     "meeting_location_lng": {
       "required": false,
       "type": "number",
-      "description": "geo coortinate"
+      "description": "geo coordinate"
     },
     "meeting_location_lat": {
       "required": false,
       "type": "number",
-      "description": "geo coortinate"
+      "description": "geo coordinate"
     },
     "vendor_id": {
       "required": false,
       "type": "string",
-      "description": "uniquie identifyer of parent vendor"
+      "description": "unique identifier of parent vendor"
     },
     "bring": {
-      "comment": "describes what clients should birng to the event",
+      "comment": "describes what clients should bring to the event",
       "required": false,
       "type": "string"
     },
@@ -81,24 +81,24 @@
         "type": "string"
     },
     "participant_hint":{
-        "comment": "question or advice directed torwards each participant, will be delivered in participant comment field",
+        "comment": "question or advice directed towards each participant, will be delivered in participant comment field",
         "required": false,
         "type": "string"
     },
     "vendor_name": {
       "required": false,
       "type": "string",
-      "description": "vendor name, usualy a company name, will allways be delivered but not necessary for incoming requests"
+      "description": "vendor name, usually a company name, will always be delivered but not necessary for incoming requests"
     },
     "youtubeVideoId": {
       "required": false,
       "type": "string",
-      "description": "Youtube video id, links / ebmedds MUST be implemendet client side"
+      "description": "Youtube video id, links / embeds MUST be implement client side"
     },
     "voucher_checkout_url": {
       "required": false,
       "type": "string",
-      "description": "checkout url to buy a voucher through the bookingkit system, will allways be delivered but not necessary for incoming requests"
+      "description": "checkout url to buy a voucher through the bookingkit system, will always be delivered but not necessary for incoming requests"
     },
     "images": {
       "required": false,
@@ -135,7 +135,7 @@
             "id": {
               "required": true,
               "type": "integer",
-              "description": "uniquie identifyer"
+              "description": "unique identifier"
             },
             "title": {
               "required": false,
@@ -157,7 +157,7 @@
             "id": {
               "required": false,
               "type": "string",
-              "description": "uniquie identifyer"
+              "description": "unique identifier"
             },
             "title": {
               "required": true,

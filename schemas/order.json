@@ -7,22 +7,22 @@
     "id": {
       "required": false,
       "type": "string",
-      "description": "uniquie identifyer"
+      "description": "unique identifier"
     },
     "code": {
       "required": false,
       "type": "string",
-      "description": "uniquie code, communicated to the end user"
+      "description": "unique code, communicated to the end user"
     },
     "external_reference": {
       "required": false,
       "type": "string",
-      "description": "third party systems that generated this order my write their own identifyer here"
+      "description": "third party systems that generated this order my write their own identifier here"
     },
     "vendor_id":{
         "required": false,
         "type": "string",
-        "description": "uniquie identifyer of the vendor"
+        "description": "unique identifier of the vendor"
     },
     "date": {
       "required": true,
@@ -43,7 +43,7 @@
       "type": "string",
       "format": "date-time",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
-      "description": "if set the Order will automaticaly cancel at the given time"
+      "description": "if set the Order will automatically cancel at the given time, minimum value is current date time, maximum value is the first service date, if available"
     },
     "status": {
       "required": true,
@@ -139,7 +139,7 @@
             "id": {
               "required": true,
               "type": "string",
-              "description": "uniquie identifyer"
+              "description": "unique identifier"
             },
             "event_date_id": {
               "required": false,
@@ -149,12 +149,12 @@
             "date_id": {
               "required": true,
               "type": "string",
-              "description": "uniquie identifyer of the reserved date"
+              "description": "unique identifier of the reserved date"
             },
             "event_id": {
               "required": false,
               "type": "string",
-              "description": "uniquie identifyer of the reserved event"
+              "description": "unique identifier of the reserved event"
             },
             "code": {
               "required": false,
@@ -190,7 +190,7 @@
                     "id": {
                       "required": true,
                       "type": "string",
-                      "description": "unique identifyer"
+                      "description": "unique identifier"
                     },
                     "status": {
                       "required": true,
@@ -222,7 +222,7 @@
                     "price_id": {
                       "required": false,
                       "type": "string",
-                      "description": "unique identifyer of the price for this participant, you MUST provide a price_id or  price_value"
+                      "description": "unique identifier of the price for this participant, you MUST provide a price_id or  price_value"
                     },
                     "price_value": {
                       "required": false,
@@ -232,7 +232,7 @@
                     "code": {
                       "required": false,
                       "type": "string",
-                      "description": "unique identifyer for this participat, can be used for ticket validation"
+                      "description": "unique identifier for this participant, can be used for ticket validation"
                     }
                   }
                 }
@@ -252,7 +252,7 @@
             "id": {
               "required": true,
               "type": "string",
-              "description": "unique identifyer"
+              "description": "unique identifier"
             },
             "status": {
                 "required": true,
@@ -318,7 +318,7 @@
             "amount": {
               "required": true,
               "type": "integer",
-              "description": "items ammount"
+              "description": "items amount"
             },
             "currency": {
               "required": false,

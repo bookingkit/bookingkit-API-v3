@@ -7,18 +7,18 @@
     "date_id": {
       "required": false,
       "type": "string",
-      "description": "uniquie identifyer of date"
+      "description": "unique identifier of date"
     },
     "event_id": {
       "required": false,
       "type": "string",
-      "description": "uniquie identifyer of parent event"
+      "description": "unique identifier of parent event"
     },
     "date": {
       "required": true,
       "type": "string",
       "format": "date-time",
-      "description": "startig time of the event",
+      "description": "starting time of the event",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
     },
     "available_slots": {
