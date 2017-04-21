@@ -128,6 +128,7 @@ schemas:
   - order_patch: !include schemas/order_patch.json
   - orders: !include schemas/orders.json
   - categories: !include schemas/categories.json
+  - category: !include schemas/category.json
   - error: !include schemas/error.json
   - batch_response: !include schemas/batch_response.json
   - products: !include schemas/products.json
@@ -145,6 +146,7 @@ traits:
   - datesCollection: !include traits/datesCollection.yaml
   - eventDatesCollection: !include traits/eventDatesCollection.yaml
   - ordersCollection: !include traits/ordersCollection.yaml
+  - categoriesCollection: !include traits/categoriesCollection.yaml
   - underConstruction: !include traits/underConstruction.yaml
   - filerableCollection: !include traits/filterableCollection.yaml
   - createRequest: !include traits/createRequest.yaml
@@ -310,4 +312,8 @@ traits:
   description: the bookingkit category tree
   type: collection
   get:
-    is: [underConstruction]
+    is: [filerableCollection, categoriesCollection]
+    description: |
+        Get all events categories
+  /{id}:
+    type: item

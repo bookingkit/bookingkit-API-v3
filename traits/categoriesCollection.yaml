@@ -1,0 +1,16 @@
+queryParameters:
+  match:
+    description: |
+      searches the string within therse proterties:
+      - title
+  order:
+    type: string
+    description: |
+      use -/+ in front of the attribute to specify the soriting direction (DESC / ASC)
+      if no modifier is provided default is +
+      multiple values MAY be provided comma separated
+      example:
+        `\<<resourcePathName>>?order=title`
+      will sort results by name ASC
+    enum:
+      - title

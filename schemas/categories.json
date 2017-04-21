@@ -2,6 +2,6 @@
   "required": true,
   "$schema": "http://json-schema.org/draft-03/schema",
   "type": "array",
-  "title": "Date collection",
+  "title": "Categories collection",
   "items": { "$ref": "category.json" }
 }
