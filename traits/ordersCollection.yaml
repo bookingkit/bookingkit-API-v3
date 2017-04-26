@@ -43,6 +43,7 @@ queryParameters:
       - PENDING
       - DECLINED
       - OPEN
+      - ALL
   accept_external_reference:
     type: string
     description: |
