@@ -2,8 +2,17 @@
   "required": true,
   "$schema": "http://json-schema.org/draft-03/schema",
   "type": "object",
-  "title": "Date",
+  "title": "Category",
   "properties": {
-
+    "id": {
+      "required": true,
+      "type": "integer",
+      "description": "unique identifier"
+    },
+    "title": {
+      "required": true,
+      "type": "string",
+      "description": "category title"
+    }
   }
 }

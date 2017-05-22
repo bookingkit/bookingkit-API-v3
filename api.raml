@@ -1,6 +1,6 @@
 #%RAML 0.8
 title: bookingkit api
-version: v3.4
+version: v3.5
 baseUri: https://api.bookingkit.de/v3
 mediaType: application/json
 protocols: [HTTPS]
@@ -100,11 +100,6 @@ documentation:
       As mentioned above try to avoid unnecessary **with_count** requests
 
       All Responses are gzipped
-  - title: |
-      ! Under Construction !
-    content: |
-      ## Structure
-      Please be advised that the specification is still under construction missing areas will be completed shortly. Changes to current definitions are not to be expected. Should such changes be necessary we will clearly communicate them to our partners.
 
 securitySchemes:
   - oauth_2_0: !include securitySchemes/oauth_2.yaml
@@ -128,6 +123,7 @@ schemas:
   - order_patch: !include schemas/order_patch.json
   - orders: !include schemas/orders.json
   - categories: !include schemas/categories.json
+  - category: !include schemas/category.json
   - error: !include schemas/error.json
   - batch_response: !include schemas/batch_response.json
   - products: !include schemas/products.json
@@ -145,6 +141,7 @@ traits:
   - datesCollection: !include traits/datesCollection.yaml
   - eventDatesCollection: !include traits/eventDatesCollection.yaml
   - ordersCollection: !include traits/ordersCollection.yaml
+  - categoriesCollection: !include traits/categoriesCollection.yaml
   - underConstruction: !include traits/underConstruction.yaml
   - filerableCollection: !include traits/filterableCollection.yaml
   - createRequest: !include traits/createRequest.yaml
@@ -310,4 +307,8 @@ traits:
   description: the bookingkit category tree
   type: collection
   get:
-    is: [underConstruction]
+    is: [filerableCollection, categoriesCollection]
+    description: |
+        Get all events categories
+  /{id}:
+    type: item
