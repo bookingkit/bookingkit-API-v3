@@ -129,6 +129,41 @@
       "type": "number",
       "description": "total value of this order for invoice purpose"
     },
+    "additional_discount":{
+      "required": false,
+      "type": "number",
+      "description": "additional discount value, not available for all api clients"
+    },
+    "shipping_country": {
+      "required": false,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code"
+    },
+    "shipping_city": {
+      "required": false,
+      "type": "string",
+      "description": "shipping city"
+    },
+    "shipping_zip": {
+      "required": false,
+      "type": "string",
+      "description": "shipping zip"
+    },
+    "shipping_street": {
+      "required": false,
+      "type": "string",
+      "description": "shipping street"
+    },
+    "shipping_streetnr": {
+      "required": false,
+      "type": "string",
+      "description": "shipping house number"
+    },
+    "shipping_name": {
+      "required": false,
+      "type": "string",
+      "description": "shipping name"
+    },
     "tickets": {
       "required": false,
       "type": "array",
@@ -228,6 +263,18 @@
                       "required": false,
                       "type": "number",
                       "description": "price value, not available for all api clients"
+                    },
+                    "price_title": {
+                      "required": false,
+                      "type": "string",
+                      "description": "price title, not available for all api clients"
+                    },
+                    "cancellation_date": {
+                      "required": false,
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+                      "description": "date when the participant was canceled"
                     },
                     "code": {
                       "required": false,
