@@ -49,6 +49,13 @@
       "required": true,
       "type": "string",
       "description": "ISO 3166-1 alpha-2 country code"
+    },
+    "activation_date": {
+      "required": true,
+      "type": "string",
+      "format": "date-time",
+      "description": "vendor activation date",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
     }
   }
 }
