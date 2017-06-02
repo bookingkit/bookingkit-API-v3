@@ -143,7 +143,7 @@ traits:
   - ordersCollection: !include traits/ordersCollection.yaml
   - categoriesCollection: !include traits/categoriesCollection.yaml
   - underConstruction: !include traits/underConstruction.yaml
-  - filerableCollection: !include traits/filterableCollection.yaml
+  - filterableCollection: !include traits/filterableCollection.yaml
   - createRequest: !include traits/createRequest.yaml
   - deleteRequest: !include traits/deleteRequest.yaml
   - patchRequest: !include traits/patchRequest.yaml
@@ -154,7 +154,7 @@ traits:
   description: Vendors are companies or persons who offer bookable activities on bookingkit.de
   type: collection
   get:
-    is: [filerableCollection, vendorsCollection]
+    is: [filterableCollection, vendorsCollection]
 
   /{id}:
     type: item
@@ -163,7 +163,7 @@ traits:
       type: collection
       description: Event collection for the given vendor
       get:
-        is: [filerableCollection, eventsCollection]
+        is: [filterableCollection, eventsCollection]
       post:
         is: [createRequest]
 
@@ -171,7 +171,7 @@ traits:
       type: collection
       description: Dates collection for the given vendor
       get:
-        is: [filerableCollection, eventsCollection]
+        is: [filterableCollection, eventsCollection]
       post:
         is: [createRequest]
 
@@ -179,7 +179,7 @@ traits:
       type: collection
       description: EventDates collection for the given vendor
       get:
-        is: [filerableCollection, datesCollection]
+        is: [filterableCollection, datesCollection]
         description: |
           Get a list of eventDates in array form
           since api console does not yet support schema relations view eventDate schema for details
@@ -191,7 +191,7 @@ traits:
       type: collection
       description: Orders collection for the given vendor
       get:
-        is: [filerableCollection, ordersCollection]
+        is: [filterableCollection, ordersCollection]
       post:
         is: [createRequest]
 
@@ -200,7 +200,7 @@ traits:
   description: Products are available in addition to the order on bookingkit.de
   type: collection
   get:
-    is: [filerableCollection, productsCollection]
+    is: [filterableCollection, productsCollection]
   post:
     is: [createRequest]
 
@@ -216,7 +216,7 @@ traits:
   description: Events are activities, they refer to the event in general and not to a date, bookable items are dates
   type: collection
   get:
-    is: [filerableCollection, eventsCollection]
+    is: [filterableCollection, eventsCollection]
   post:
     is: [createRequest]
 
@@ -232,7 +232,7 @@ traits:
       type: collection
       description: Date collection for the given event
       get:
-        is: [filerableCollection, datesCollection]
+        is: [filterableCollection, datesCollection]
       post:
         is: [createRequest]
 
@@ -245,7 +245,7 @@ traits:
     this is a fast and slim request ideal for creating a calendar for example
   type: date-sorted-collection
   get:
-    is: [filerableCollection, datesCollection]
+    is: [filterableCollection, datesCollection]
   post:
     is: [createRequest]
 
@@ -282,7 +282,7 @@ traits:
     this is a much slower request and delivers a lot of data only use if displaying date lists with event details
   type: collection
   get:
-    is: [filerableCollection, datesCollection]
+    is: [filterableCollection, datesCollection]
     description: |
       Get a list of eventDates in array form
       since api console does not yet support schema relations view eventDate schema for details
@@ -294,7 +294,7 @@ traits:
   description: |
     Orders MUST contain at least one ticket or voucher
   get:
-    is: [filerableCollection, ordersCollection]
+    is: [filterableCollection, ordersCollection]
   post:
     is: [createRequest]
 /orders/{id}:
@@ -307,7 +307,7 @@ traits:
   description: the bookingkit category tree
   type: collection
   get:
-    is: [filerableCollection, categoriesCollection]
+    is: [filterableCollection, categoriesCollection]
     description: |
         Get all events categories
   /{id}:
