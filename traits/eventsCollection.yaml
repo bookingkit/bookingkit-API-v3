@@ -17,6 +17,14 @@ queryParameters:
     type: number
   max_price:
     type: number
+  type:
+      type: string
+      description: filter by event type
+      default: booking
+      enum:
+        - booking
+        - request
+        - all
   order:
     type: string
     description: |
