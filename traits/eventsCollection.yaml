@@ -22,9 +22,9 @@ queryParameters:
       description: filter by event type
       default: booking
       enum:
-        - booking
-        - request
-        - all
+        - BOOKING
+        - REQUEST
+        - ALL
   order:
     type: string
     description: |
