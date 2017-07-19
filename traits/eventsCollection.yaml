@@ -20,7 +20,7 @@ queryParameters:
   type:
       type: string
       description: filter by event type
-      default: booking
+      default: BOOKING
       enum:
         - BOOKING
         - REQUEST
