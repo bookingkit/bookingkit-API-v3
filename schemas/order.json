@@ -214,6 +214,11 @@
               "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
               "description": "date when the ticket was canceled"
             },
+            "vat": {
+              "required": false,
+              "type": "number",
+              "description": "vat value, not available for all api clients"
+            },
             "participants": {
               "required": true,
               "type": "array",
@@ -307,6 +312,11 @@
                 "enum": ["ACCEPTED", "CANCELED", "PENDING"],
                 "description": "status of the order"
             },
+            "vat": {
+              "required": false,
+              "type": "number",
+              "description": "vat value, not available for all api clients"
+            },
             "voucher": {
               "required": true,
               "type": "object",
@@ -373,6 +383,11 @@
               "maxLength": 3,
               "minLength": 3,
               "description": "item currency"
+            },
+            "vat": {
+              "required": false,
+              "type": "number",
+              "description": "vat value, not available for all api clients"
             }
           }
         }
