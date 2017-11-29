@@ -58,3 +58,7 @@ queryParameters:
     type: string
     description: only return items changed since this date (YYYY-MM-DDThh:mm:ssZ, UTC)
     pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$
+  with_private_prices:
+    type: boolean
+    description: return private and public prices
+    default: false
