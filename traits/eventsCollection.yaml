@@ -13,6 +13,9 @@ queryParameters:
   exclude_vendors:
     type: string
     description: comma separated list of rejected vendor ids
+  preferred_categories:
+    type: string
+    description: comma separated list of preferred categories. Events with these categories are placed at the top of the list.
   min_price:
     type: number
   max_price:
