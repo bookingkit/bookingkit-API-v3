@@ -186,6 +186,11 @@
               "maxLength": 3,
               "minLength": 3,
               "description": "price currency"
+            },
+            "public": {
+              "required": false,
+              "type": "integer",
+              "description": "price type"
             }
           }
         }
