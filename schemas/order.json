@@ -220,7 +220,7 @@
               "description": "vat value, not available for all api clients"
             },
             "participants": {
-              "required": true,
+              "required": false,
               "type": "array",
               "minItems": 1,
               "items": [
