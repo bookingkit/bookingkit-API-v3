@@ -164,6 +164,11 @@
       "type": "string",
       "description": "shipping name"
     },
+    "sale_params": {
+      "required": false,
+      "type": "string",
+      "description": "Additional sales informations"
+    },    
     "tickets": {
       "required": false,
       "type": "array",
