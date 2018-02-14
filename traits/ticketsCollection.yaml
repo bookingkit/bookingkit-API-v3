@@ -1,0 +1,12 @@
+queryParameters:
+  accept_code:
+    type: string
+    description: |
+      comma separated list of accepted ticket codes
+      can be used to load by code
+  exclude_code:
+    type: string
+    description: |
+      comma separated list of excluded ticket codes
+      can be used to load by code
+

@@ -1,0 +1,62 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Ticket",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier"
+    },
+    "event_date_id": {
+      "required": false,
+      "type": "string",
+      "description": "deprecated, wrong name"
+    },
+    "date_id": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier of the reserved event date"
+    },
+    "event_id": {
+      "required": false,
+      "type": "string",
+      "description": "unique identifier of the reserved event"
+    },
+    "code": {
+      "required": false,
+      "type": "string",
+      "description": "unique code for this ticket"
+    },
+    "status": {
+      "required": true,
+      "type": "string",
+      "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+      "description": "status of the ticket"
+    },
+    "comment": {
+      "required": false,
+      "type": "string",
+      "description": "comments for the ticket"
+    },
+    "cancellation_date": {
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "date when the ticket was canceled"
+    },
+    "vat": {
+      "required": false,
+      "type": "number",
+      "description": "vat value, not available for all api clients"
+    },
+    "participants": {
+      "required": false,
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "participants.json" }
+    }
+  }
+}
