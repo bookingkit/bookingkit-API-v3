@@ -1,0 +1,9 @@
+queryParameters:
+  accept_code:
+    type: string
+    description: |
+      comma separated list of accepted participant_tickets codes
+  exclude_code:
+    type: string
+    description: |
+      comma separated list of excluded participant_tickets codes
