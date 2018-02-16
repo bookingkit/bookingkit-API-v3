@@ -1,0 +1,7 @@
+{
+  "required": false,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "array",
+  "title": "Participant collection",
+  "items": { "$ref": "participant.json" }
+}

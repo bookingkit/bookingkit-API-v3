@@ -290,6 +290,11 @@
                       "required": false,
                       "type": "string",
                       "description": "unique identifier for this participant, can be used for ticket validation"
+                    },
+                    "checked_in": {
+                      "required": false,
+                      "type": "string",
+                      "description": "Check-in time of this participant"
                     }
                   }
                 }
