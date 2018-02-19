@@ -157,6 +157,11 @@
                       "required": false,
                       "type": "string",
                       "description": "unique identifier of the price for this participant"
+                    },
+                    "checked_in": {
+                      "required": false,
+                      "type": "string",
+                      "description": "Check-in time of this participant"
                     }
                   }
                 }
