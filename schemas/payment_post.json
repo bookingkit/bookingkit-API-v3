@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Payment Post",
+  "properties": {
+    "value": {
+      "required": true,
+      "type": "number",
+      "description": "payment value"
+    },
+    "type": {
+      "required": true,
+      "type": "string",
+      "description": "payment type, can take 'payment' or 'refund'"
+    }
+  }
+}
