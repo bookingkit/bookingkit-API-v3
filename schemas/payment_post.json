@@ -13,6 +13,13 @@
       "required": true,
       "type": "string",
       "description": "payment type, can take 'payment' or 'refund'"
+    },
+    "payment_date": {
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "payment_date, optional"
     }
   }
 }
