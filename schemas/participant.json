@@ -1,0 +1,72 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Participant",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier"
+    },
+    "status": {
+      "required": true,
+      "type": "string",
+      "enum": ["ACCEPTED", "CANCELED"],
+      "description": "status of the participant"
+    },
+    "name": {
+      "required": false,
+      "type": "string",
+      "description": "participant name"
+    },
+    "email": {
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "description": "participant email"
+    },
+    "phone": {
+      "required": false,
+      "type": "string",
+      "description": "participant phone"
+    },
+    "comment": {
+      "required": false,
+      "type": "string",
+      "description": "comments concerning this participant"
+    },
+    "price_id": {
+      "required": false,
+      "type": "string",
+      "description": "unique identifier of the price for this participant, you MUST provide a price_id or  price_value"
+    },
+    "price_value": {
+      "required": false,
+      "type": "number",
+      "description": "price value, not available for all api clients"
+    },
+    "price_title": {
+      "required": false,
+      "type": "string",
+      "description": "price title, not available for all api clients"
+    },
+    "cancellation_date": {
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+      "description": "date when the participant was canceled"
+    },
+    "code": {
+      "required": false,
+      "type": "string",
+      "description": "unique identifier for this participant, can be used for ticket validation"
+    },
+    "checked_in": {
+      "required": false,
+      "type": "string",
+      "description": "Check-in time of this participant"
+    }
+  }
+}

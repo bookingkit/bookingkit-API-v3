@@ -129,11 +129,19 @@ schemas:
   - products: !include schemas/products.json
   - product: !include schemas/product.json
   - product_patch: !include schemas/product_patch.json
+  - payment: !include schemas/payments.json
+  - payments: !include schemas/payments.json
+  - payments_post: !include schemas/payment_post.json
+  - ticket: !include schemas/ticket.json
+  - tickets: !include schemas/tickets.json
+  - participant_ticket: !include schemas/participant.json
+  - participant_tickets: !include schemas/participants.json
 
 resourceTypes:
   - collection: !include resourceTypes/collection.yaml
   - date-sorted-collection: !include resourceTypes/date-sorted-collection.yaml
   - item: !include resourceTypes/item.yaml
+  - abstract-item: !include resourceTypes/abstract-item.yaml
 
 traits:
   - eventsCollection: !include traits/eventsCollection.yaml
@@ -148,6 +156,7 @@ traits:
   - deleteRequest: !include traits/deleteRequest.yaml
   - patchRequest: !include traits/patchRequest.yaml
   - productsCollection: !include traits/productsCollection.yaml
+  - ticketsCollection: !include traits/ticketsCollection.yaml
 
 /vendors:
   displayName: Vendor
@@ -301,6 +310,48 @@ traits:
     type: item
     patch:
       is: [patchRequest]
+/orders/{id}/payments:
+    type: collection
+    description: |
+       payments of an order
+    get:
+        is: []
+    post:
+        is: [createRequest]
+
+/orders/{id}/tickets:
+    type: collection
+    description: |
+       tickets of an order
+    get:
+        is: [ticketsCollection]
+/orders/{id}/tickets/{ticket_id}:
+    type: abstract-item
+    description: |
+       a ticket of an order
+    get:
+        is: []
+
+/orders/{id}/tickets/{ticket_id}/participant_tickets:
+    type: collection
+    description: |
+       participant tickets of a ticket
+    get:
+        is: [ticketsCollection]
+
+/orders/{id}/tickets/{ticket_id}/participant_tickets/{participant_ticket_id}:
+    type: abstract-item
+    description: |
+       a participant ticket
+    get:
+        is: []
+
+/participant_tickets:
+    type: collection
+    description: |
+       participant tickets of a ticket
+    get:
+        is: [ticketsCollection]
 
 /categories:
   displayName: Categories
