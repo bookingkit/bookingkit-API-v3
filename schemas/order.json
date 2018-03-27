@@ -112,6 +112,11 @@
       "type": "string",
       "description": "ISO 3166-1 alpha-2 country code"
     },
+    "internal_notes": {
+      "required": false,
+      "type": "string",
+      "description": "internal comments"
+    },
     "comment": {
       "required": false,
       "type": "string",
