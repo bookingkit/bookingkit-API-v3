@@ -113,6 +113,8 @@ schemas:
   - event: !include schemas/event.json
   - event_patch: !include schemas/event_patch.json
   - events: !include schemas/events.json
+  - merged_events: !include schemas/merged_events.json
+  - merged_event: !include schemas/merged_event.json
   - date: !include schemas/date.json
   - date_patch: !include schemas/date_patch.json
   - dates: !include schemas/dates.json
@@ -245,7 +247,19 @@ traits:
       post:
         is: [createRequest]
 
+/merged_events:
+  displayName: Merged Events
+  description: Events are activities, they refer to the event in general and not to a date, bookable items are dates
+  type: collection
+  get:
+    is: [filterableCollection, eventsCollection]
 
+  /{id}:
+    type: abstract-item
+    description: |
+       Merged event endpoint
+    get:
+        is: []
 
 /dates:
   displayName: Dates
