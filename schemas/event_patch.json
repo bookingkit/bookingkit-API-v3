@@ -100,6 +100,11 @@
       "type": "string",
       "description": "checkout url to buy a voucher through the bookingkit system, will always be delivered but not necessary for incoming requests"
     },
+    "root_event_id": {
+      "required": false,
+      "type": "string",
+      "description": "root event identifier"
+    },
     "images": {
       "required": false,
       "type": "array",
