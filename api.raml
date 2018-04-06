@@ -116,8 +116,10 @@ schemas:
   - merged_events: !include schemas/merged_events.json
   - merged_event: !include schemas/merged_event.json
   - date: !include schemas/date.json
+  - merged-date: !include schemas/date.json
   - date_patch: !include schemas/date_patch.json
   - dates: !include schemas/dates.json
+  - merged-dates: !include schemas/dates.json
   - eventDates: !include schemas/eventDates.json
   - datesBatch: !include schemas/datesBatch.json
   - datesBatch_patch: !include schemas/datesBatch_patch.json
@@ -278,6 +280,17 @@ traits:
       is: [patchRequest]
     delete:
       is: [underConstruction,deleteRequest]
+
+/merged-dates:
+  displayName: Merged Dates
+  description: |
+    Merged Dates
+  type: date-sorted-collection
+  get:
+    is: [filterableCollection, datesCollection]
+
+  /{id}:
+    type: abstract-item
 
 /datesBatch:
   displayName: DatesBatch
