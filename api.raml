@@ -115,6 +115,7 @@ schemas:
   - events: !include schemas/events.json
   - merged_events: !include schemas/merged_events.json
   - merged_event: !include schemas/merged_event.json
+  - prices: !include schemas/prices.json
   - date: !include schemas/date.json
   - merged-date: !include schemas/date.json
   - date_patch: !include schemas/date_patch.json
@@ -149,6 +150,7 @@ resourceTypes:
 
 traits:
   - eventsCollection: !include traits/eventsCollection.yaml
+  - eventDatePricesCollection: !include traits/eventDatePricesCollection.yaml
   - vendorsCollection: !include traits/vendorsCollection.yaml
   - datesCollection: !include traits/datesCollection.yaml
   - eventDatesCollection: !include traits/eventDatesCollection.yaml
@@ -291,6 +293,11 @@ traits:
 
   /{id}:
     type: abstract-item
+    /prices:
+      type: collection
+      description: Prices of the given event date
+      get:
+        is: [eventDatePricesCollection]
 
 /datesBatch:
   displayName: DatesBatch
