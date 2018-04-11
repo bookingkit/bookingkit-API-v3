@@ -1,0 +1,5 @@
+queryParameters:
+  with_private_prices:
+    type: boolean
+    description: return private and public prices
+    default: false

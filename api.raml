@@ -113,9 +113,14 @@ schemas:
   - event: !include schemas/event.json
   - event_patch: !include schemas/event_patch.json
   - events: !include schemas/events.json
+  - merged_events: !include schemas/merged_events.json
+  - merged_event: !include schemas/merged_event.json
+  - prices: !include schemas/prices.json
   - date: !include schemas/date.json
+  - merged-date: !include schemas/date.json
   - date_patch: !include schemas/date_patch.json
   - dates: !include schemas/dates.json
+  - merged-dates: !include schemas/dates.json
   - eventDates: !include schemas/eventDates.json
   - datesBatch: !include schemas/datesBatch.json
   - datesBatch_patch: !include schemas/datesBatch_patch.json
@@ -145,6 +150,7 @@ resourceTypes:
 
 traits:
   - eventsCollection: !include traits/eventsCollection.yaml
+  - eventDatePricesCollection: !include traits/eventDatePricesCollection.yaml
   - vendorsCollection: !include traits/vendorsCollection.yaml
   - datesCollection: !include traits/datesCollection.yaml
   - eventDatesCollection: !include traits/eventDatesCollection.yaml
@@ -245,7 +251,19 @@ traits:
       post:
         is: [createRequest]
 
+/merged_events:
+  displayName: Merged Events
+  description: Events are activities, they refer to the event in general and not to a date, bookable items are dates
+  type: collection
+  get:
+    is: [filterableCollection, eventsCollection]
 
+  /{id}:
+    type: abstract-item
+    description: |
+       Merged event endpoint
+    get:
+        is: []
 
 /dates:
   displayName: Dates
@@ -264,6 +282,22 @@ traits:
       is: [patchRequest]
     delete:
       is: [underConstruction,deleteRequest]
+
+/merged-dates:
+  displayName: Merged Dates
+  description: |
+    Merged Dates
+  type: date-sorted-collection
+  get:
+    is: [filterableCollection, datesCollection]
+
+  /{id}:
+    type: abstract-item
+    /prices:
+      type: collection
+      description: Prices of the given event date
+      get:
+        is: [eventDatePricesCollection]
 
 /datesBatch:
   displayName: DatesBatch

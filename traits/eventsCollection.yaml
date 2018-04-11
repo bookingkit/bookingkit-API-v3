@@ -65,3 +65,7 @@ queryParameters:
     type: boolean
     description: return private and public prices
     default: false
+  only_root_events:
+    type: boolean
+    description: return root events only
+    default: false

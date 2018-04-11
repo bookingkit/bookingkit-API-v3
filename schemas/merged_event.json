@@ -2,21 +2,32 @@
   "required": true,
   "$schema": "http://json-schema.org/draft-03/schema",
   "type": "object",
-  "title": "Event Patch",
+  "title": "Merged Event",
   "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier"
+    },
     "title": {
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "event title, descriptive",
       "maxLength": 255
     },
     "description": {
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "text describing the event"
     },
-    "duration": {
+    "type": {
       "required": false,
+      "type": "string",
+      "description": "event type",
+      "enum": ["BOOKING", "REQUEST"]
+    },
+    "duration": {
+      "required": true,
       "type": "number",
       "description": "duration of the event in minutes"
     },
@@ -26,42 +37,42 @@
       "type": "integer"
     },
     "max_participants": {
-      "required": false,
+      "required": true,
       "type": "integer",
       "description": "maximum number of concurrent participants for one event"
     },
     "location": {
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "event location address"
     },
     "location_lng": {
-      "required": false,
+      "required": true,
       "type": "number",
       "description": "geo coordinate"
     },
     "location_lat": {
-      "required": false,
+      "required": true,
       "type": "number",
       "description": "geo coordinate"
     },
     "meeting_location": {
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "meeting location address, MAY differ from event location"
     },
     "meeting_location_lng": {
-      "required": false,
+      "required": true,
       "type": "number",
       "description": "geo coordinate"
     },
     "meeting_location_lat": {
-      "required": false,
+      "required": true,
       "type": "number",
       "description": "geo coordinate"
     },
     "vendor_id": {
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "unique identifier of parent vendor"
     },
@@ -71,19 +82,19 @@
       "type": "string"
     },
     "advice":{
-        "comment": "vendor advice concerning participants",
-        "required": false,
-        "type": "string"
+      "comment": "vendor advice concerning participants",
+      "required": false,
+      "type": "string"
     },
     "hint":{
-        "comment": "vendor advice concerning the order",
-        "required": false,
-        "type": "string"
+      "comment": "vendor advice concerning the order",
+      "required": false,
+      "type": "string"
     },
     "participant_hint":{
-        "comment": "question or advice directed towards each participant, will be delivered in participant comment field",
-        "required": false,
-        "type": "string"
+      "comment": "question or advice directed towards each participant, will be delivered in participant comment field",
+      "required": false,
+      "type": "string"
     },
     "vendor_name": {
       "required": false,
@@ -100,20 +111,15 @@
       "type": "string",
       "description": "checkout url to buy a voucher through the bookingkit system, will always be delivered but not necessary for incoming requests"
     },
-    "root_event_id": {
-      "required": false,
-      "type": "string",
-      "description": "root event identifier"
-    },
     "images": {
-      "required": false,
+      "required": true,
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
       "items": [
         {
           "type": "string",
-          "description": "image URL"
+          "description": "image URL, for post you can provide the image as an URL or a base64 encoded string"
         }
       ]
     },
@@ -131,7 +137,7 @@
     },
     "categories": {
       "description": "full ordered category tree path, on incoming requests the deepest level id is sufficient",
-      "required": false,
+      "required": true,
       "type": "array",
       "items": [
         {
@@ -151,7 +157,7 @@
         }
       ]
     },
-    "prices": {
+    "price_groups": {
       "required": false,
       "type": "array",
       "uniqueItems": true,
@@ -160,26 +166,53 @@
           "type": "object",
           "properties": {
             "id": {
-              "required": false,
+              "required": true,
               "type": "string",
               "description": "unique identifier"
             },
-            "title": {
+            "name": {
               "required": true,
               "type": "string",
               "description": "price name, will explain the difference to other prices"
             },
-            "value": {
+            "prices": {
               "required": true,
-              "type": "number",
-              "description": "price value"
-            },
-            "currency": {
-              "required": true,
-              "type": "string",
-              "maxLength": 3,
-              "minLength": 3,
-              "description": "price currency"
+              "type": "array",
+              "uniqueItems": true,
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "required": true,
+                      "type": "string",
+                      "description": "unique identifier"
+                    },
+                    "title": {
+                      "required": true,
+                      "type": "string",
+                      "description": "price name, will explain the difference to other prices"
+                    },
+                    "value": {
+                      "required": true,
+                      "type": "number",
+                      "description": "price value"
+                    },
+                    "currency": {
+                      "required": true,
+                      "type": "string",
+                      "maxLength": 3,
+                      "minLength": 3,
+                      "description": "price currency"
+                    },
+                    "public": {
+                      "required": false,
+                      "type": "integer",
+                      "description": "price type"
+                    }
+                  }
+                }
+              ]
             }
           }
         }
@@ -209,6 +242,13 @@
           }
         }
       ]
+    },
+    "first_date": {
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "description": "starting time of the next event",
+      "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
     },
     "min_participants": {
       "required": false,

@@ -1,0 +1,41 @@
+[
+  {
+    "required": false,
+    "type": "array",
+    "uniqueItems": true,
+    "items": [
+      {
+        "type": "object",
+        "properties": {
+          "id": {
+            "required": true,
+            "type": "string",
+            "description": "unique identifier"
+          },
+          "title": {
+            "required": true,
+            "type": "string",
+            "description": "price name, will explain the difference to other prices"
+          },
+          "value": {
+            "required": true,
+            "type": "number",
+            "description": "price value"
+          },
+          "currency": {
+            "required": true,
+            "type": "string",
+            "maxLength": 3,
+            "minLength": 3,
+            "description": "price currency"
+          },
+          "public": {
+            "required": false,
+            "type": "integer",
+            "description": "price type"
+          }
+        }
+      }
+    ]
+  }
+]
