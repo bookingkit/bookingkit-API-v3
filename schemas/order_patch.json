@@ -158,6 +158,11 @@
                       "type": "string",
                       "description": "unique identifier of the price for this participant"
                     },
+                    "code": {
+                      "required": false,
+                      "type": "string",
+                      "description": "unique code for this ticket"
+                    },                    
                     "checked_in": {
                       "required": false,
                       "type": "string",
