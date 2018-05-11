@@ -4,6 +4,7 @@ queryParameters:
       searches the string within therse proterties:
       - title
       - description
+      - vendors' names
   category:
     type: integer
     description: filter by category id, get a complete list of categories from the categories resource
