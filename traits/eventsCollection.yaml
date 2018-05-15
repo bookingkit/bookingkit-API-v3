@@ -70,3 +70,7 @@ queryParameters:
     type: boolean
     description: return root events only
     default: false
+  only_main_duration:
+    type: boolean
+    description: return main duration event only
+    default: false
