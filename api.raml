@@ -117,10 +117,10 @@ schemas:
   - merged_event: !include schemas/merged_event.json
   - prices: !include schemas/prices.json
   - date: !include schemas/date.json
-  - merged-date: !include schemas/date.json
+  - merged_date: !include schemas/date.json
   - date_patch: !include schemas/date_patch.json
   - dates: !include schemas/dates.json
-  - merged-dates: !include schemas/dates.json
+  - merged_dates: !include schemas/dates.json
   - eventDates: !include schemas/eventDates.json
   - datesBatch: !include schemas/datesBatch.json
   - datesBatch_patch: !include schemas/datesBatch_patch.json
@@ -283,7 +283,7 @@ traits:
     delete:
       is: [underConstruction,deleteRequest]
 
-/merged-dates:
+/merged_dates:
   displayName: Merged Dates
   description: |
     Merged Dates
