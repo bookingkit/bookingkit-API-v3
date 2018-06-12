@@ -8,6 +8,9 @@ queryParameters:
   category:
     type: integer
     description: filter by category id, get a complete list of categories from the categories resource
+  categories:
+    type: string
+    description: filter by list of category ids, get a complete list of categories from the categories resource    
   accept_vendors:
     type: string
     description: comma separated list of accepted vendor ids
