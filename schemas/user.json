@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "User",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier"
+    },
+    "name": {
+      "required": true,
+      "type": "string",
+      "description": "user name"
+    },
+    "email": {
+      "required": true,
+      "type": "string",
+      "description": "user email"
+    },
+    "language": {
+      "required": true,
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "description": "language code ISO_639-1"
+    }
+  }
+}

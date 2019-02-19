@@ -133,6 +133,8 @@ schemas:
   - batch_response: !include schemas/batch_response.json
   - products: !include schemas/products.json
   - product: !include schemas/product.json
+  - users: !include schemas/users.json
+  - user: !include schemas/user.json
   - product_patch: !include schemas/product_patch.json
   - payment: !include schemas/payments.json
   - payments: !include schemas/payments.json
@@ -395,5 +397,16 @@ traits:
     is: [filterableCollection, categoriesCollection]
     description: |
         Get all events categories
+  /{id}:
+    type: item
+
+/users:
+  displayName: Users
+  description: user list
+  type: collection
+  get:
+    is: [filterableCollection]
+    description: |
+        Get all users
   /{id}:
     type: item
