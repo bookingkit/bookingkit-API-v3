@@ -95,6 +95,11 @@
               "type": "string",
               "description": "unique identifier of the reserved event date"
             },
+            "date_id": {
+              "required": false,
+              "type": "string",
+              "description": "unique identifier of the reserved event date"
+            },
             "status": {
               "required": false,
               "type": "string",
