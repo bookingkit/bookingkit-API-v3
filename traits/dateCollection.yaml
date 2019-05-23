@@ -1,6 +1,2 @@
 queryParameters:
-  include_inactive:
-    type: boolean
-    description: return inactive / deleted event dates as well. Only to be used for getting order service details
-    default: false
   
