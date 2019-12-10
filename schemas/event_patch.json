@@ -15,6 +15,12 @@
       "type": "string",
       "description": "text describing the event"
     },
+    "type": {
+      "required": false,
+      "type": "string",
+      "description": "event type",
+      "enum": ["BOOKING", "REQUEST"]
+    },
     "duration": {
       "required": false,
       "type": "number",
