@@ -1,0 +1,43 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Extension",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier"
+    },
+    "name": {
+      "required": true,
+      "type": "string",
+      "description": "name of the extension"
+    },
+    "icon": {
+      "required": true,
+      "type": "string",
+      "description": "link to the extension icon"
+    },
+    "description": {
+      "required": true,
+      "type": "string",
+      "description": "extension description"
+    },
+    "description_url": {
+      "required": true,
+      "type": "string",
+      "description": "description url to the extension"
+    },
+    "image_url": {
+      "required": false,
+      "type": "string",
+      "description": "extension image url"
+    },
+    "public": {
+      "required": false,
+      "type": "integer",
+      "description": "is extension public or not"
+    }
+  }
+}
