@@ -209,7 +209,7 @@
             "status": {
               "required": true,
               "type": "string",
-              "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+              "enum": ["ACCEPTED", "CANCELED", "PENDING","OPEN"],
               "description": "status of the ticket"
             },
             "comment": {
@@ -325,7 +325,7 @@
                 "required": true,
                 "type": "string",
                 "enum": ["ACCEPTED", "CANCELED", "PENDING"],
-                "description": "status of the order"
+                "description": "status of the voucher order"
             },
             "vat": {
               "required": false,
@@ -374,8 +374,8 @@
             "status": {
               "required": true,
               "type": "string",
-              "enum": ["ACCEPTED", "CANCELED", "PENDING"],
-              "description": "status of the order"
+              "enum": ["ACCEPTED", "CANCELED", "PENDING", "OPEN"],
+              "description": "status of the product"
             },
             "title": {
               "required": false,
