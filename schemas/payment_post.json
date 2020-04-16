@@ -12,7 +12,14 @@
     "type": {
       "required": true,
       "type": "string",
+      "enum": ["payment", "refund"],
       "description": "payment type, can take 'payment' or 'refund'"
+    },
+    "payment_method":{
+      "required": false,
+      "type": "string",
+      "enum": ["ThirdParty", "Cash","MobileApp"],
+      "description": "the method of payment"
     },
     "payment_date": {
       "required": false,

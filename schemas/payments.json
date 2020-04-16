@@ -4,6 +4,11 @@
   "type": "object",
   "title": "Payment Post",
   "properties": {
+    "id": {
+      "required": false,
+      "type": "string",
+      "description": "unique identifier"
+    },
     "value": {
       "required": true,
       "type": "number",
@@ -12,7 +17,23 @@
     "type": {
       "required": true,
       "type": "string",
+      "enum": ["payment", "refund"],
       "description": "payment type, can take 'payment' or 'refund'"
+    },
+    "code": {
+      "required": true,
+      "type": "string",
+      "description": "deprecated, please use payment_method instead"
+    },
+    "payment_method":{
+      "required": true,
+      "type": "string",
+      "description": "the method of payment"
+    },
+    "name":{
+      "required": true,
+      "type": "string",
+      "description": "user readable name of the payment method in english"
     },
     "payment_date": {
       "required": false,
