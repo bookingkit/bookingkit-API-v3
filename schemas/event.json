@@ -247,6 +247,11 @@
       "required": false,
       "type": "integer",
       "description": "time (in minutes) before event start when event not bookable"
+    },
+    "commission": {
+      "required": false,
+      "type": "integer",
+      "description": "percent of the order received as commission, read only field"
     }
   }
 }
