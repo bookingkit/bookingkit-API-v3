@@ -51,6 +51,11 @@
       "type": "string",
       "description": "price title, not available for all api clients"
     },
+    "vat": {
+      "required": false,
+      "type": "number",
+      "description": "vat value, not available for all api clients"
+    },
     "cancellation_date": {
       "required": false,
       "type": "string",
