@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Reseller Patch",
+  "properties": {
+    "commission": {
+      "required": false,
+      "type": "number",
+      "description": "Commission"
+    },
+    "activation_date": {
+      "required": false,
+      "type": "date",
+      "description": "Activation Date"
+    }
+  }
+}
