@@ -13,6 +13,11 @@
       "required": false,
       "type": "date",
       "description": "Activation Date"
+    },
+    "bk_provision_rate": {
+      "required": false,
+      "type": "number",
+      "description": "Bk Provision Rate"
     }
   }
 }
