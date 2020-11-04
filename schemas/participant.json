@@ -72,6 +72,37 @@
       "required": false,
       "type": "string",
       "description": "Check-in time of this participant"
+            },
+            "applied_flexTicket": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "required": true,
+                  "type": "sting",
+                  "description": "flexible ticket id"
+                },
+                "applied_value": {
+                  "required": true,
+                  "type": "number",
+                  "description": "value applied to this order"
+                },
+                "creation_date": {
+                  "required": true,
+                  "type": "string",
+                  "format": "date-time",
+                  "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+                  "description": "date when the flexible ticket was created"
+                },
+                "purchasing_order_id": {
+                  "required": true,
+                  "type": "string",
+                  "description": "id of the order that purchased this flexible ticket"
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
