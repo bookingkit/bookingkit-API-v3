@@ -41,6 +41,16 @@
       "minLength": 4,
       "description": "billing name"
     },
+    "company": {
+      "required": false,
+      "type": "string",
+      "description": "billing company"
+    },
+    "vat_number": {
+      "required": false,
+      "type": "string",
+      "description": "VAT identification number"
+    },
     "phone": {
       "required": false,
       "type": "string",
@@ -66,6 +76,16 @@
       "type": "string",
       "description": "billing city"
     },
+    "country":{
+      "required": false,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code"
+    },
+    "internal_notes": {
+      "required": false,
+      "type": "string",
+      "description": "internal comments"
+    },
     "comment": {
       "required": false,
       "type": "string",
@@ -77,6 +97,46 @@
       "format": "date-time",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
       "description": "date at which the order was cancelled"
+    },
+    "additional_discount":{
+      "required": false,
+      "type": "number",
+      "description": "additional discount value"
+    },
+    "shipping_country": {
+      "required": false,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code"
+    },
+    "shipping_city": {
+      "required": false,
+      "type": "string",
+      "description": "shipping city"
+    },
+    "shipping_zip": {
+      "required": false,
+      "type": "string",
+      "description": "shipping zip"
+    },
+    "shipping_street": {
+      "required": false,
+      "type": "string",
+      "description": "shipping street"
+    },
+    "shipping_streetnr": {
+      "required": false,
+      "type": "string",
+      "description": "shipping house number"
+    },
+    "shipping_name": {
+      "required": false,
+      "type": "string",
+      "description": "shipping name"
+    },
+    "sale_params": {
+      "required": false,
+      "type": "string",
+      "description": "Additional sales informations"
     },
     "tickets": {
       "required": false,
@@ -93,12 +153,12 @@
             "event_date_id": {
               "required": false,
               "type": "string",
-              "description": "unique identifier of the reserved event date"
+              "description": "deprecated, wrong name"
             },
             "date_id": {
               "required": false,
               "type": "string",
-              "description": "unique identifier of the reserved event date"
+              "description": "unique identifier of the reserved date"
             },
             "status": {
               "required": false,
@@ -166,7 +226,7 @@
                     "code": {
                       "required": false,
                       "type": "string",
-                      "description": "unique code for this ticket"
+                      "description": "unique identifier for this participant, can be used for ticket validation"
                     },                    
                     "checked_in": {
                       "required": false,
@@ -237,7 +297,7 @@
               "required": false,
               "type": "string",
               "enum": ["ACCEPTED", "CANCELED", "PENDING"],
-              "description": "status of the order"
+              "description": "status of the product"
             },
             "title": {
               "required": false,
@@ -247,7 +307,7 @@
             "price": {
               "required": false,
               "type": "number",
-              "description": "price value, not available for all api clients"
+              "description": "price value"
             },
             "amount": {
               "required": false,

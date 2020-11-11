@@ -82,6 +82,11 @@
       "type": "string",
       "description": "billing company"
     },
+    "vat_number": {
+      "required": false,
+      "type": "string",
+      "description": "VAT identification number"
+    },
     "phone": {
       "required": false,
       "type": "string",
@@ -122,6 +127,33 @@
       "type": "string",
       "description": "order comments"
     },
+    "additional_information": {
+      "required": false,
+      "type": "array",
+      "description": "additional order information from customized input",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": true,
+              "type": "sting",
+              "description": "custom input id"
+            },
+            "title": {
+              "required": true,
+              "type": "string",
+              "description": "custom input title"
+            },
+            "value": {
+              "required": true,
+              "type": "string",
+              "description": "custom input value"
+            }
+          }
+        }
+      ]
+    },
     "cancellation_date": {
       "required": false,
       "type": "string",
@@ -137,7 +169,81 @@
     "additional_discount":{
       "required": false,
       "type": "number",
-      "description": "additional discount value, not available for all api clients"
+      "description": "additional discount value"
+    },
+    "redeemed_coupons":{
+      "required": false,
+      "type": "array",
+      "description": "applied discount coupons",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": true,
+              "type": "sting",
+              "description": "coupon id"
+            },
+            "title": {
+              "required": true,
+              "type": "string",
+              "description": "promotion title"
+            },
+            "redeemed_value": {
+              "required": true,
+              "type": "number",
+              "description": "value redeemed to this order"
+            },
+            "usage_date": {
+              "required": true,
+              "type": "string",
+              "format": "date-time",
+              "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+              "description": "date when the coupon was applied"
+            }
+          }
+        }
+      ]
+    },
+    "redeemed_vouchers": {
+      "required": false,
+      "type": "array",
+      "description": "vouchers used to pay for this order",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": true,
+              "type": "sting",
+              "description": "voucher id"
+            },
+            "redeemed_value": {
+              "required": true,
+              "type": "number",
+              "description": "value redeemed to this order"
+            },
+            "usage_date": {
+              "required": true,
+              "type": "string",
+              "format": "date-time",
+              "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+              "description": "date when the coupon was applied"
+            },
+            "creation_date": {
+              "required": true,"type": "string",
+              "format": "date-time",
+              "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+              "description": "date when the voucher was created"
+            },
+            "purchasing_order_id": {
+              "required": false,
+              "type": "string",
+              "description": "id of the order that purchased this voucher, this can be empty"
+            }
+          }
+        }
+      ]
     },
     "shipping_country": {
       "required": false,
@@ -305,6 +411,32 @@
                       "required": false,
                       "type": "string",
                       "description": "Check-in time of this participant"
+                    },
+                    "redeemed_flexTicket": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "required": true,
+                          "type": "sting",
+                          "description": "flexible ticket id"
+                        },
+                        "redeemed_value": {
+                          "required": true,
+                          "type": "number",
+                          "description": "value redeemed to this order"
+                        },
+                        "creation_date": {
+                          "required": true,"type": "string",
+                          "format": "date-time",
+                          "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
+                          "description": "date when the flexible ticket was created"
+                        },
+                        "purchasing_order_id": {
+                          "required": true,
+                          "type": "string",
+                          "description": "id of the order that purchased this flexible ticket"
+                        }
+                      }
                     }
                   }
                 }
@@ -390,7 +522,7 @@
             "price": {
               "required": false,
               "type": "number",
-              "description": "price value, not available for all api clients"
+              "description": "price value"
             },
             "amount": {
               "required": true,
@@ -407,7 +539,71 @@
             "vat": {
               "required": false,
               "type": "number",
-              "description": "vat value, not available for all api clients"
+              "description": "vat value"
+            }
+          }
+        }
+      ]
+    },
+    "flexTickets":{
+      "required": false,
+      "type": "array",
+      "items":[
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "required": true,
+              "type": "string",
+              "description": "flex ticket id"
+            },
+            "code": {
+              "required": true,
+              "type": "string",
+              "description": "flex ticket code"
+            },
+            "status": {
+              "required": true,
+              "type": "string",
+              "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+              "description": "status of the flex ticket"
+            },
+            "title": {
+              "required": true,
+              "type": "string",
+              "description": "flex ticket display title"
+            },
+            "redemption_total": {
+              "required": true,
+              "type": "integer",
+              "description": "total amount of purchasable entries"
+            },
+            "redemption_available": {
+              "required": true,
+              "type": "integer",
+              "description": "total amount of available entries"
+            },
+            "price": {
+              "required": false,
+              "type": "number",
+              "description": "price value"
+            },
+            "price_title": {
+              "required": true,
+              "type": "string",
+              "description": "price display title"
+            },
+            "currency": {
+              "required": false,
+              "type": "string",
+              "maxLength": 3,
+              "minLength": 3,
+              "description": "item currency"
+            },
+            "vat": {
+              "required": false,
+              "type": "number",
+              "description": "vat value"
             }
           }
         }
