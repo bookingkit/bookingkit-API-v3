@@ -129,7 +129,7 @@
               "type": "string",
               "description": "Check-in time of this participant"
             },
-            "applied_flexTicket": {
+            "redeemed_flexTicket": {
               "type": "object",
               "properties": {
                 "id": {
@@ -137,10 +137,10 @@
                   "type": "sting",
                   "description": "flexible ticket id"
                 },
-                "applied_value": {
+                "redeemed_value": {
                   "required": true,
                   "type": "number",
-                  "description": "value applied to this order"
+                  "description": "value redeemed to this order"
                 },
                 "creation_date": {
                   "required": true,

@@ -171,7 +171,7 @@
       "type": "number",
       "description": "additional discount value"
     },
-    "applied_coupons":{
+    "redeemed_coupons":{
       "required": false,
       "type": "array",
       "description": "applied discount coupons",
@@ -189,10 +189,10 @@
               "type": "string",
               "description": "promotion title"
             },
-            "applied_value": {
+            "redeemed_value": {
               "required": true,
               "type": "number",
-              "description": "value applied to this order"
+              "description": "value redeemed to this order"
             },
             "usage_date": {
               "required": true,
@@ -205,7 +205,7 @@
         }
       ]
     },
-    "applied_vouchers": {
+    "redeemed_vouchers": {
       "required": false,
       "type": "array",
       "description": "vouchers used to pay for this order",
@@ -218,10 +218,10 @@
               "type": "sting",
               "description": "voucher id"
             },
-            "applied_value": {
+            "redeemed_value": {
               "required": true,
               "type": "number",
-              "description": "value applied to this order"
+              "description": "value redeemed to this order"
             },
             "usage_date": {
               "required": true,
@@ -412,7 +412,7 @@
                       "type": "string",
                       "description": "Check-in time of this participant"
                     },
-                    "applied_flexTicket": {
+                    "redeemed_flexTicket": {
                       "type": "object",
                       "properties": {
                         "id": {
@@ -420,10 +420,10 @@
                           "type": "sting",
                           "description": "flexible ticket id"
                         },
-                        "applied_value": {
+                        "redeemed_value": {
                           "required": true,
                           "type": "number",
-                          "description": "value applied to this order"
+                          "description": "value redeemed to this order"
                         },
                         "creation_date": {
                           "required": true,"type": "string",
