@@ -456,7 +456,7 @@
             "id": {
               "required": true,
               "type": "string",
-              "description": "unique identifier"
+              "description": "unique identifier of the voucher purchase"
             },
             "status": {
                 "required": true,
@@ -473,6 +473,11 @@
               "required": true,
               "type": "object",
               "properties": {
+                "id": {
+                  "required": true,
+                  "type": "string",
+                  "description": "unique identifier of the voucher"
+                },
                 "code": {
                   "required": true,
                   "type": "string",
