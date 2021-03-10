@@ -278,8 +278,13 @@
     "sale_params": {
       "required": false,
       "type": "string",
-      "description": "Additional sales informations"
-    },    
+      "description": "Additional sales information"
+    },
+    "external_order_url": {
+      "required": false,
+      "type": "string",
+      "description": "Additional order details URL from an external system."
+    },
     "tickets": {
       "required": false,
       "type": "array",
