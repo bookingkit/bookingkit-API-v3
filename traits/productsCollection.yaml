@@ -29,3 +29,7 @@ queryParameters:
     enum:
       - name
       - price
+  translations:
+    type: boolean
+    description: return translations
+    default: false
