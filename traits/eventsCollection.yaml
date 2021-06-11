@@ -77,3 +77,7 @@ queryParameters:
     type: boolean
     description: return main duration event only
     default: false
+  translations:
+    type: boolean
+    description: return translations
+    default: false
