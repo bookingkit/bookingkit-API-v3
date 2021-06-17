@@ -1,5 +1,0 @@
-queryParameters:
-  translations:
-    type: boolean
-    description: return translations
-    default: false

@@ -10,7 +10,7 @@ queryParameters:
     description: filter by category id, get a complete list of categories from the categories resource
   categories:
     type: string
-    description: filter by list of category ids, get a complete list of categories from the categories resource    
+    description: filter by list of category ids, get a complete list of categories from the categories resource
   accept_vendors:
     type: string
     description: comma separated list of accepted vendor ids
@@ -76,8 +76,4 @@ queryParameters:
   only_main_duration:
     type: boolean
     description: return main duration event only
-    default: false
-  translations:
-    type: boolean
-    description: return translations
     default: false
