@@ -279,6 +279,13 @@
                   "maxLength": 3,
                   "minLength": 3,
                   "description": "voucher currency"
+                },
+                "code": {
+                  "required": false,
+                  "type": "string",
+                  "maxLength": 255,
+                  "minLength": 4,
+                  "description": "voucher code"
                 }
               }
             }
