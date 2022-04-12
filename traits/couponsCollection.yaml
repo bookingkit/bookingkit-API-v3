@@ -1,0 +1,12 @@
+queryParameters:
+  accepted_coupons:
+    type: string
+    description: comma separated list of accepted coupons ids
+  created_date_from:
+    type: string
+    description: return orders placed later or equal to this date (YYYY-MM-DDThh:mm:ssZ, UTC)
+    pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$
+  created_date_to:
+    type: string
+    description: return orders placed earlier or equal to this date (YYYY-MM-DDThh:mm:ssZ, UTC)
+    pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$
