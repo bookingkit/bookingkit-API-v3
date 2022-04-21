@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Coupon",
+  "properties": {
+    "ident": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier"
+    },
+    "title": {
+      "required": true,
+      "type": "string",
+      "description": "coupon title"
+    },
+    "code": {
+      "required": true,
+      "type": "string",
+      "description": "coupon code"
+    }
+  }
+}

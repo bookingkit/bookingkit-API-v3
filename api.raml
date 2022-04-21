@@ -143,6 +143,10 @@ schemas:
   - tickets: !include schemas/tickets.json
   - participant_ticket: !include schemas/participant.json
   - participant_tickets: !include schemas/participants.json
+  - voucher: !include schemas/voucher.json
+  - vouchers: !include schemas/vouchers.json
+  - coupon: !include schemas/coupon.json
+  - coupons: !include schemas/coupons.json
 
 resourceTypes:
   - collection: !include resourceTypes/collection.yaml
@@ -166,6 +170,8 @@ traits:
   - patchRequest: !include traits/patchRequest.yaml
   - productsCollection: !include traits/productsCollection.yaml
   - ticketsCollection: !include traits/ticketsCollection.yaml
+  - vouchersCollection: !include traits/vouchersCollection.yaml
+  - couponsCollection: !include traits/couponsCollection.yaml
 
 /vendors:
   displayName: Vendor
@@ -413,3 +419,17 @@ traits:
         Get all users
   /{id}:
     type: item
+
+/vouchers:
+  displayName: Voucher
+  description: vouchers list
+  type: collection
+  get:
+    is: [vouchersCollection]
+
+/coupons:
+  displayName: Coupon
+  description: coupons list
+  type: collection
+  get:
+    is: [couponsCollection]
