@@ -425,11 +425,13 @@ traits:
   description: vouchers list
   type: collection
   get:
-    is: [vouchersCollection]
+    is: [filterableCollection]
+  /{id}:
+    type: item
 
 /coupons:
   displayName: Coupon
   description: coupons list
   type: collection
   get:
-    is: [couponsCollection]
+    is: [filterableCollection]
