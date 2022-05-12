@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Voucher",
+  "properties": {
+    "ident": {
+      "required": true,
+      "type": "string",
+      "description": "unique identifier"
+    },
+    "title": {
+      "required": true,
+      "type": "string",
+      "description": "voucher title"
+    },
+    "code": {
+      "required": true,
+      "type": "string",
+      "description": "voucher code"
+    }
+  }
+}
