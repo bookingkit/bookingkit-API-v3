@@ -3,5 +3,5 @@
   "$schema": "http://json-schema.org/draft-03/schema",
   "type": "array",
   "title": "Coupon collection",
-  "items": { "$ref": "coupons.json" }
+  "items": { "$ref": "coupon.json" }
 }
