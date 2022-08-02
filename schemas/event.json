@@ -56,6 +56,11 @@
       "type": "string",
       "description": "event location address"
     },
+    "location_place_id": {
+      "required": true,
+      "type": "string",
+      "description": "Google Place ID of the event location"
+    },
     "location_lng": {
       "required": true,
       "type": "number",
@@ -80,6 +85,11 @@
       "required": true,
       "type": "number",
       "description": "geo coordinate"
+    },
+    "meeting_location_place_id": {
+      "required": true,
+      "type": "string",
+      "description": "Google Place ID of the meeting location"
     },
     "vendor_id": {
       "required": true,
