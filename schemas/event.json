@@ -57,7 +57,7 @@
       "description": "event location address"
     },
     "location_place_id": {
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "Google Place ID of the event location"
     },
@@ -87,7 +87,7 @@
       "description": "geo coordinate"
     },
     "meeting_location_place_id": {
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "Google Place ID of the meeting location"
     },
