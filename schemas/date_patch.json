@@ -9,6 +9,11 @@
       "type": "string",
       "description": "unique identifier of date"
     },
+    "active":{
+      "required": false,
+      "type": "integer",
+      "description": "Is this object still valid or not. Non active objects count as deleted and will not be a part of the object collection"
+    },
     "event_id": {
       "required": false,
       "type": "string",
