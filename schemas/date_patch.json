@@ -21,11 +21,6 @@
       "description": "starting time of the event",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
     },
-    "available_slots": {
-      "required": false,
-      "description": "number of available seats / persons",
-      "type": "integer"
-    },
     "total_slots": {
       "required": false,
       "description": "total number of seats / persons",
