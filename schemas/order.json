@@ -154,6 +154,23 @@
         }
       ]
     },
+    "booking_channel": {
+      "required": false,
+      "type": "array",
+      "description": "Reseller or other type of api client that the order was created by. This is available only for particular API clients.",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "required": true,
+              "type": "sting",
+              "description": "The reseller or other type of api client name"
+            }
+          }
+        }
+      ]
+    },
     "cancellation_date": {
       "required": false,
       "type": "string",
