@@ -11,16 +11,28 @@
       "description": "unique identifier of the open date ticket that was redeemed"
     },
     "order_id": {
-      "required": true,
+      "required": false,
       "type": "string",
       "title": "Order ID",
       "description": "The unique identifier of the order that was created during redemption process"
     },
     "appointment_id": {
-      "required": true,
+      "required": false,
       "type": "string",
       "title": "Appointment ID",
-      "description": "The unique identifier of the appointment the open date ticket was booked into"
+      "description": "The unique identifier of the appointment (only required if redemption strategy is selected_appointment))"
+    },
+    "redemption_strategy": {
+      "required": false,
+      "type": "string",
+      "title": "Redemption Strategy",
+      "description": "The strategy to redeem the open date ticket",
+      "enum": [
+        "next_available_appointment",
+        "current_appointment_with_overbooking",
+        "current_appointment_without_overbooking",
+        "selected_appointment"
+      ]
     }
   }
 }
