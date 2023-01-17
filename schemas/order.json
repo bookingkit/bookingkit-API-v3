@@ -137,7 +137,7 @@
           "properties": {
             "id": {
               "required": true,
-              "type": "sting",
+              "type": "string",
               "description": "custom input id"
             },
             "title": {
@@ -164,7 +164,7 @@
           "properties": {
             "name": {
               "required": true,
-              "type": "sting",
+              "type": "string",
               "description": "The reseller or other type of api client name"
             }
           }
@@ -232,7 +232,7 @@
           "properties": {
             "id": {
               "required": true,
-              "type": "sting",
+              "type": "string",
               "description": "voucher id"
             },
             "redeemed_value": {
@@ -439,7 +439,7 @@
                       "properties": {
                         "id": {
                           "required": true,
-                          "type": "sting",
+                          "type": "string",
                           "description": "flexible ticket id"
                         },
                         "redeemed_value": {
