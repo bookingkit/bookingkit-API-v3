@@ -198,7 +198,7 @@
           "properties": {
             "id": {
               "required": true,
-              "type": "sting",
+              "type": "string",
               "description": "coupon id"
             },
             "title": {
