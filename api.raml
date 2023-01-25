@@ -147,6 +147,8 @@ schemas:
   - vouchers: !include schemas/vouchers.json
   - coupon: !include schemas/coupon.json
   - coupons: !include schemas/coupons.json
+  - open_date_ticket: !include schemas/open_date_ticket.json
+  - open_date_ticket_redemption: !include schemas/open_date_ticket_redemption.json
 
 resourceTypes:
   - collection: !include resourceTypes/collection.yaml
@@ -397,6 +399,20 @@ traits:
        participant tickets of a ticket
     get:
         is: [ticketsCollection]
+
+/open_date_tickets/{id}:
+  type: abstract-item
+  description: |
+     an open date ticket
+  get:
+    is: []
+
+/open_date_tickets/{id}/redeem:
+  type: abstract-item
+  description: |
+      an open date ticket redemption
+  post:
+    is: [createRequest]
 
 /categories:
   displayName: Categories
