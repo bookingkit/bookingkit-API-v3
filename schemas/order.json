@@ -48,7 +48,7 @@
     "status": {
       "required": true,
       "type": "string",
-      "enum": ["ACCEPTED", "CANCELED", "PENDING", "OPEN"],
+      "enum": ["ACCEPTED", "CANCELED", "PENDING", "OPEN", "RESERVED"],
       "description": "status of the order"
     },
     "lang": {
@@ -320,7 +320,7 @@
             "status": {
               "required": true,
               "type": "string",
-              "enum": ["ACCEPTED", "CANCELED", "PENDING","OPEN"],
+              "enum": ["ACCEPTED", "CANCELED", "PENDING","OPEN", "RESERVED"],
               "description": "status of the ticket"
             },
             "comment": {
