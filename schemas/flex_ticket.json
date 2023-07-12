@@ -1,0 +1,72 @@
+{
+  "required": true,
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "title": "Flex Ticket",
+  "type": "object",
+  "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "flex ticket id"
+    },
+    "code": {
+      "required": true,
+      "type": "string",
+      "description": "flex ticket code"
+    },
+    "status": {
+      "required": true,
+      "type": "string",
+      "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+      "description": "status of the flex ticket"
+    },
+    "title": {
+      "required": true,
+      "type": "string",
+      "description": "flex ticket display title"
+    },
+    "redemption_total": {
+      "required": true,
+      "type": "integer",
+      "description": "total amount of purchasable entries"
+    },
+    "redemption_available": {
+      "required": true,
+      "type": "integer",
+      "description": "total amount of available entries"
+    },
+    "price": {
+      "required": false,
+      "type": "number",
+      "description": "price value"
+    },
+    "price_title": {
+      "required": true,
+      "type": "string",
+      "description": "price display title"
+    },
+    "currency": {
+      "required": false,
+      "type": "string",
+      "maxLength": 3,
+      "minLength": 3,
+      "description": "item currency"
+    },
+    "vat": {
+      "required": false,
+      "type": "number",
+      "description": "vat value"
+    },
+    "flexOffer": {
+      "required": false,
+      "type": "object",
+      "properties": {
+        "id": {
+          "required": true,
+          "type": "string",
+          "description": "flex offer id"
+        }
+      }
+    }
+  }
+}
