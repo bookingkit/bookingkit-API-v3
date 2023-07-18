@@ -302,10 +302,10 @@
       "type": "string",
       "description": "Additional order details URL from an external system."
     },
-    "send_newsletter": {
+    "email_newsletter_opt_in": {
       "required": false,
       "type": "string",
-      "description": "Consent to receive e-mail newsletter given with this order. Possible values: '1' or empty"
+      "description": "Consent to receive e-mail newsletter given with this order. Possible values: '1' or empty."
     },
     "tickets": {
       "required": false,
