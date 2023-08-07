@@ -636,6 +636,17 @@
               "required": false,
               "type": "number",
               "description": "vat value"
+            },
+            "flexOffer": {
+              "required": false,
+              "type": "object",
+              "properties": {
+                "id": {
+                  "required": true,
+                  "type": "string",
+                  "description": "flex offer id"
+                }
+              }
             }
           }
         }
