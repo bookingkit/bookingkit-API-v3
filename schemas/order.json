@@ -20,9 +20,9 @@
       "description": "third party systems that generated this order my write their own identifier here"
     },
     "vendor_id":{
-        "required": false,
-        "type": "string",
-        "description": "unique identifier of the vendor"
+      "required": false,
+      "type": "string",
+      "description": "unique identifier of the vendor"
     },
     "date": {
       "required": true,
@@ -302,6 +302,11 @@
       "type": "string",
       "description": "Additional order details URL from an external system."
     },
+    "email_newsletter_opt_in": {
+      "required": false,
+      "type": "string",
+      "description": "Consent to receive e-mail newsletter given with this order. Possible values: '1' or empty."
+    },
     "tickets": {
       "required": false,
       "type": "array",
@@ -481,10 +486,10 @@
               "description": "unique identifier of the voucher purchase"
             },
             "status": {
-                "required": true,
-                "type": "string",
-                "enum": ["ACCEPTED", "CANCELED", "PENDING"],
-                "description": "status of the voucher order"
+              "required": true,
+              "type": "string",
+              "enum": ["ACCEPTED", "CANCELED", "PENDING"],
+              "description": "status of the voucher order"
             },
             "vat": {
               "required": false,
