@@ -615,6 +615,11 @@
               "type": "integer",
               "description": "total amount of available entries"
             },
+            "unlimited_redemptions": {
+              "required": false,
+              "type": "integer",
+              "description": "is unlimited redemption active"
+            },
             "price": {
               "required": false,
               "type": "number",
@@ -645,6 +650,16 @@
                   "required": true,
                   "type": "string",
                   "description": "flex offer id"
+                },
+                "price_category_id": {
+                  "required": true,
+                  "type": "string",
+                  "description": "price category id"
+                },
+                "event_id": {
+                  "required": true,
+                  "type": "string",
+                  "description": "event id"
                 }
               }
             }
