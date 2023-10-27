@@ -65,6 +65,16 @@
           "required": true,
           "type": "string",
           "description": "flex offer id"
+        },
+        "price_category_id": {
+          "required": true,
+          "type": "string",
+          "description": "price category id"
+        },
+        "event_id": {
+          "required": true,
+          "type": "string",
+          "description": "event id"
         }
       }
     }
