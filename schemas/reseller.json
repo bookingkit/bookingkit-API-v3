@@ -4,20 +4,35 @@
   "type": "object",
   "title": "Reseller",
   "properties": {
+    "id": {
+      "required": true,
+      "type": "string",
+      "description": "API client ID"
+    },
+    "name": {
+      "required": false,
+      "type": "string",
+      "description": "API client name"
+    },
+    "activation_date": {
+      "required": false,
+      "type": "date",
+      "description": "Activation Date"
+    },
     "commission": {
       "required": false,
       "type": "number",
       "description": "Commission"
     },
-    "api_client_id": {
+    "type": {
       "required": false,
       "type": "string",
-      "description": "API CLIENT ID"
-    }    ,
-    "activation_date": {
+      "description": "API client type"
+    },
+    "status": {
       "required": false,
-      "type": "date",
-      "description": "Activation Date"
+      "type": "string",
+      "description": "Status of the API client"
     }
   }
 }
