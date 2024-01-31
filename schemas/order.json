@@ -166,6 +166,11 @@
               "required": true,
               "type": "string",
               "description": "The reseller or other type of api client name"
+            },
+            "id": {
+              "required": true,
+              "type": "string",
+              "description": "The reseller ID or other type of api client ID"
             }
           }
         }
