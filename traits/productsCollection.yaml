@@ -17,6 +17,10 @@ queryParameters:
     type: number
   max_price:
     type: number
+  with_private_products:
+    type: boolean
+    description: return private and public products
+    default: false
   order:
     type: string
     description: |
