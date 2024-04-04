@@ -74,7 +74,7 @@
     "name": {
       "required": true,
       "type": "string",
-      "minLength": 4,
+      "minLength": 2,
       "description": "billing name"
     },
     "company": {
