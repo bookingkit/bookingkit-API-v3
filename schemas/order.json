@@ -307,6 +307,11 @@
       "type": "string",
       "description": "Additional order details URL from an external system."
     },
+    "affiliate_id": {
+      "required": false,
+      "type": "string",
+      "description": "Affiliate link ID if the order was created through an affiliate link."
+    },
     "email_newsletter_opt_in": {
       "required": false,
       "type": "string",
