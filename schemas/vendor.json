@@ -62,17 +62,17 @@
       "type": "string",
       "description": "The vendor's currency code (ISO 4217)"
     },
-    "bill_company_name": {
+    "legal_company_name": {
       "required": false,
       "type": "string",
       "description": "The vendor's bill country name"
     },
-    "bill_first_name": {
+    "legal_representative_first_name": {
       "required": false,
       "type": "string",
       "description": "The vendor representatives first name"
     },
-    "bill_last_name": {
+    "legal_representative_last_name": {
       "required": false,
       "type": "string",
       "description": "The vendor representatives last name"
