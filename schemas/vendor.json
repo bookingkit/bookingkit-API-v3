@@ -56,6 +56,26 @@
       "format": "date-time",
       "description": "vendor activation date",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC"
+    },
+    "currency": {
+      "required": false,
+      "type": "string",
+      "description": "The vendor's currency code (ISO 4217)"
+    },
+    "legal_company_name": {
+      "required": false,
+      "type": "string",
+      "description": "The vendor's bill country name"
+    },
+    "legal_representative_first_name": {
+      "required": false,
+      "type": "string",
+      "description": "The vendor representatives first name"
+    },
+    "legal_representative_last_name": {
+      "required": false,
+      "type": "string",
+      "description": "The vendor representatives last name"
     }
   }
 }
