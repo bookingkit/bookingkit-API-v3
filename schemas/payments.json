@@ -17,7 +17,10 @@
     "type": {
       "required": true,
       "type": "string",
-      "enum": ["payment", "refund"],
+      "enum": [
+        "payment",
+        "refund"
+      ],
       "description": "payment type, can take 'payment' or 'refund'"
     },
     "code": {
@@ -25,12 +28,12 @@
       "type": "string",
       "description": "deprecated, please use payment_method instead"
     },
-    "payment_method":{
+    "payment_method": {
       "required": true,
       "type": "string",
       "description": "the method of payment"
     },
-    "name":{
+    "name": {
       "required": true,
       "type": "string",
       "description": "user readable name of the payment method in english"
@@ -41,6 +44,48 @@
       "format": "date-time",
       "example": "format: YYYY-MM-DDThh:mm:ssZ, UTC",
       "description": "payment_date, optional"
+    },
+    "related_items": {
+      "required": false,
+      "type": "object",
+      "description": "related items, optional",
+      "properties": {
+        "orders": {
+          "required": false,
+          "type": "array",
+          "description": "related orders, optional",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "required": true,
+                "type": "string",
+                "description": "order id"
+              },
+              "code": {
+                "required": true,
+                "type": "string",
+                "description": "order code"
+              }
+            }
+          }
+        },
+        "vouchers": {
+          "required": false,
+          "type": "array",
+          "description": "related vouchers, optional",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "required": true,
+                "type": "string",
+                "description": "voucher id"
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
