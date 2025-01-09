@@ -213,6 +213,12 @@
                       "type": "number",
                       "description": "price value"
                     },
+                     "category": {
+                      "required": false,
+                      "enum": ["Adult","Senior","Youth","Child","Infant","Student","Group","Other"],
+                      "type": "string",
+                      "description": "price category"
+                    },
                     "currency": {
                       "required": true,
                       "type": "string",
