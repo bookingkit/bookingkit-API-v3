@@ -51,6 +51,11 @@
       "type": "integer",
       "description": "maximum number of concurrent participants for one event"
     },
+    "timezone": {
+      "required": false,
+      "type": "string",
+      "description": "time zone of the location"
+    },
     "location": {
       "required": true,
       "type": "string",
