@@ -39,6 +39,11 @@
             "required": false,
             "type": "integer",
             "description": "price type"
+          },
+          "vat": {
+            "required": false,
+            "type": "number",
+            "description": "price vat percentage"
           }
         }
       }
